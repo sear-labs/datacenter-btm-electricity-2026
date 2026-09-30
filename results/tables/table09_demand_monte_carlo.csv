@@ -1,0 +1,10 @@
+phase_mw,scenario,avg_power_mw,p95_peak_mw,min_idle_mw
+25,Normal Day,12.928257,20.73325,5.0
+25,High Usage (Spike),19.584051,25.0,9.111817
+25,Weekend/Batch,10.996024,15.989,6.349555
+100,Normal Day,51.635,82.889237,20.0
+100,High Usage (Spike),78.286893,100.0,37.758534
+100,Weekend/Batch,43.980394,63.701914,24.438953
+250,Normal Day,129.259516,208.429818,50.0
+250,High Usage (Spike),195.951119,250.0,93.515532
+250,Weekend/Batch,109.872959,156.07595,61.460085

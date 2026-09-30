@@ -1,0 +1,57 @@
+scenario,source,peak_mw,energy_mwh_day,installed_mw
+Baseline (100% Grid),Grid,243.424454,4678.772969,
+Baseline (100% Grid),RICE,0.0,0.0,
+Baseline (100% Grid),Solar PPA,0.0,0.0,
+Baseline (100% Grid),Geothermal,0.0,0.0,
+Baseline (100% Grid),SMR,0.0,0.0,
+Baseline (100% Grid),Microturbines,0.0,0.0,
+Baseline (100% Grid),BESS (Discharge),0.0,0.0,
+Baseline (100% Grid),BESS (Charge),0.0,0.0,
+S1: Grid + RICE + Hybrid BESS,Grid,100.0,2400.0,100.0
+S1: Grid + RICE + Hybrid BESS,RICE,143.424454,2428.772969,150.0
+S1: Grid + RICE + Hybrid BESS,Solar PPA,0.0,0.0,
+S1: Grid + RICE + Hybrid BESS,Geothermal,0.0,0.0,
+S1: Grid + RICE + Hybrid BESS,SMR,0.0,0.0,
+S1: Grid + RICE + Hybrid BESS,Microturbines,0.0,0.0,
+S1: Grid + RICE + Hybrid BESS,BESS (Discharge),30.0,30.0,30.0
+S1: Grid + RICE + Hybrid BESS,BESS (Charge),30.0,180.0,30.0
+S2: Solar PPA + RICE + Hybrid BESS + Grid,Grid,10.0,240.0,10.0
+S2: Solar PPA + RICE + Hybrid BESS + Grid,RICE,190.59882,3531.5519,210.0
+S2: Solar PPA + RICE + Hybrid BESS + Grid,Solar PPA,119.944869,907.221069,120.0
+S2: Solar PPA + RICE + Hybrid BESS + Grid,Geothermal,0.0,0.0,
+S2: Solar PPA + RICE + Hybrid BESS + Grid,SMR,0.0,0.0,
+S2: Solar PPA + RICE + Hybrid BESS + Grid,Microturbines,0.0,0.0,
+S2: Solar PPA + RICE + Hybrid BESS + Grid,BESS (Discharge),35.0,175.0,35.0
+S2: Solar PPA + RICE + Hybrid BESS + Grid,BESS (Charge),35.0,175.0,35.0
+S3: 100% Geothermal Baseload,Grid,0.0,0.0,
+S3: 100% Geothermal Baseload,RICE,0.0,0.0,
+S3: 100% Geothermal Baseload,Solar PPA,0.0,0.0,
+S3: 100% Geothermal Baseload,Geothermal,243.424454,4678.772969,250.0
+S3: 100% Geothermal Baseload,SMR,0.0,0.0,
+S3: 100% Geothermal Baseload,Microturbines,0.0,0.0,
+S3: 100% Geothermal Baseload,BESS (Discharge),0.0,0.0,
+S3: 100% Geothermal Baseload,BESS (Charge),0.0,0.0,
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,Grid,91.58899,1193.958923,130.0
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,RICE,0.0,0.0,
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,Solar PPA,79.963246,604.814046,80.0
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,Geothermal,120.0,2880.0,120.0
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,SMR,0.0,0.0,
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,Microturbines,0.0,0.0,
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,BESS (Discharge),25.0,125.0,25.0
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,BESS (Charge),25.0,125.0,25.0
+S5: SMR + Solar PPA + Grid,Grid,47.105399,227.21988,70.0
+S5: SMR + Solar PPA + Grid,RICE,0.0,0.0,
+S5: SMR + Solar PPA + Grid,Solar PPA,49.977029,351.515282,50.0
+S5: SMR + Solar PPA + Grid,Geothermal,0.0,0.0,
+S5: SMR + Solar PPA + Grid,SMR,180.0,4100.037806,180.0
+S5: SMR + Solar PPA + Grid,Microturbines,0.0,0.0,
+S5: SMR + Solar PPA + Grid,BESS (Discharge),0.0,0.0,
+S5: SMR + Solar PPA + Grid,BESS (Charge),0.0,0.0,
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,Grid,50.0,1200.0,50.0
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,RICE,0.0,0.0,
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,Solar PPA,0.0,0.0,
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,Geothermal,100.0,2400.0,100.0
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,SMR,0.0,0.0,
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,Microturbines,93.424454,1243.772969,80.0
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,BESS (Discharge),30.0,15.0,30.0
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,BESS (Charge),30.0,180.0,30.0

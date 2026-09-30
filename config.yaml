@@ -1,0 +1,100 @@
+# Parameters for every stage. A scenario change is an edit here, never in src/.
+# Each value is transcribed from the archived notebook named beside it
+# (archive/notebooks/); tests/test_agreement_with_archive.py checks the port against them.
+
+seed: 42  # every stochastic stage starts a fresh legacy RandomState(42), as the notebooks did
+
+demand:  # Section 4.3, Eqs. 1-5, Figure 4 and Table 9 -- data_center_demand_mc.ipynb
+  pue: 1.2
+  idle_fraction: 0.20          # servers draw 20% of maximum IT power when idle
+  time_steps: 96               # 15-minute intervals over 24 h
+  iterations: 1000             # N in the paper
+  volatility: 0.15             # sd of the per-step noise before smoothing
+  smoothing_window: 4          # rolling mean over 4 steps (1 h), min_periods = 1
+  scenarios: ["Normal Day", "High Usage (Spike)", "Weekend/Batch"]
+  phases_mw: [25, 100, 250]    # Table 9 rows; Phase 1, 2, 3
+  normalised_cap: 100.0        # Figure 4 is drawn as % of facility capacity
+
+dispatch:  # Section 5.1, Figure 5 and Table 11 -- scenarios_gen.ipynb, cell 1
+  facility_mw: 250             # Phase 3
+  demand_scenario: "High Usage (Spike)"
+  volatility: 0.05             # NOTE: differs from demand.volatility; see README, "Known differences"
+  utilization_floor: 0.1       # NOTE: the paper's Eq. 2 clips at 0; this stage clips at 0.1
+  smoothing_window: 4
+  windows_h:                   # inclusive hour-of-day windows on the 96-step grid
+    daylight: [7, 19]          # solar output sin(pi (t - 7) / 12), peak at 13:00
+    night_charge: [0, 6]
+    solar_charge: [10, 15]
+    evening_peak: [18, 23]
+  scenarios:
+    S1:
+      title: "S1: Grid + RICE + Hybrid BESS"
+      subtitle: "Installed: Grid (100MW) | RICE (150MW) | BESS (30MW)"   # Figure 5 panel text, verbatim
+      grid_cap_mw: 100
+      bess_mw: 30
+      charge_window: night_charge
+      discharge_if_demand_above_mw: 220
+      installed_mw: {Grid: 100, RICE: 150, BESS: 30}
+    S2:
+      title: "S2: Solar PPA + RICE + Hybrid BESS + Grid"
+      subtitle: "Installed: Solar (120MW) | RICE (210MW) | Grid (10MW) | BESS (35MW)"   # Figure 5 panel text, verbatim
+      solar_mw: 120
+      grid_cap_mw: 10
+      bess_mw: 35
+      charge_window: solar_charge
+      discharge_if_remainder_above_mw: 150
+      installed_mw: {Solar PPA: 120, RICE: 210, Grid: 10, BESS: 35}
+    S3:
+      title: "S3: 100% Geothermal Baseload"
+      subtitle: "Installed: Geothermal (250MW)"   # Figure 5 panel text, verbatim
+      installed_mw: {Geothermal: 250}
+    S4:
+      title: "S4: Geothermal + Solar PPA + Hybrid BESS + Grid"
+      subtitle: "Installed: Geo (120MW) | Solar (80MW) | Grid (130MW) | BESS (25MW)"   # Figure 5 panel text, verbatim
+      geo_mw: 120
+      solar_mw: 80
+      bess_mw: 25
+      charge_window: solar_charge
+      discharge_if_remainder_above_mw: 50
+      installed_mw: {Geothermal: 120, Solar PPA: 80, Grid: 130, BESS: 25}
+    S5:
+      title: "S5: SMR + Solar PPA + Grid"
+      subtitle: "Installed: SMR (180MW) | Solar (50MW) | Grid (70MW)"   # Figure 5 panel text, verbatim
+      smr_mw: 180
+      solar_mw: 50
+      installed_mw: {SMR: 180, Solar PPA: 50, Grid: 70}
+    S6:
+      title: "S6: Geothermal + Grid + Microturbines + Hybrid BESS"
+      subtitle: "Installed: Geo (100MW) | Micro (80MW) | Grid (50MW) | BESS (30MW)"   # Figure 5 panel text, verbatim
+      geo_mw: 100
+      grid_cap_mw: 50
+      bess_mw: 30
+      charge_window: night_charge
+      discharge_if_remainder_above_mw: 80
+      installed_mw: {Geothermal: 100, Microturbines: 80, Grid: 50, BESS: 30}
+  bess_duration_h: 5           # Table 11 MWh = MW x 5 h (Section 4.4: a 5-hour system)
+
+lcoe:  # Section 4.5, Eq. 6, Table 12 -- lcoe_calcs.ipynb; inputs in data/raw/technology_costs.csv
+  discount_rate: 0.08
+  reference_kw: 1000           # 1 MW reference plant
+  hours_per_year: 8760
+  bess_mwh_per_day: 5          # one full 5-hour cycle of a 1 MW system per day
+
+utilization:  # Section 5.2.2, Eqs. 7-8, Table 13, Figure 6 -- utilization_rates.ipynb
+  hours_per_year: 8760         # inputs in data/raw/asset_utilization.csv
+
+scale:  # Section 2.2, Eq. for tokens per second, Table 3 -- no notebook; paper text
+  facilities_mw: [25, 50, 100]
+  rack_kw: 125                 # GB200 NVL72, steady state
+  rack_exaflops_fp4: 1.4
+  rack_fabric_pbps: 1.6        # implied by Table 3: 320 Pb/s over 200 racks
+  rack_egress_tbps: 1.0        # implied by Table 3: 200 Tb/s over 200 racks
+  active_parameters: 3.0e+10    # 30 billion; YAML 1.1 reads "30.0e9" as a string
+  flops_per_parameter_per_token: 2
+  tokens_facility_mw: 100
+  tokens_facility_zettaflops: 1.1   # the rounded figure the paper's sentence uses
+
+resilience:  # Table 15 -- no code in the source material
+  critical_load_mw: 250
+  # 'Max BTM Output' reproduces as the sum of Table 11's dispatchable on-site assets:
+  dispatchable_btm: ["Geothermal", "SMR", "RICE", "Microturbines", "BESS"]

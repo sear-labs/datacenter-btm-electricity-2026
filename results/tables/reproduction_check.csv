@@ -1,0 +1,154 @@
+item,table,row,column,unit,published,computed,delta,tol,kind,status,basis
+T3.racks.25,Table 3,25 MW,Rack Count (NVL72),racks,200.0,200.0,0.0,0.5,computed,REPRODUCED,facility MW / 125 kW per rack
+T3.racks.50,Table 3,50 MW,Rack Count (NVL72),racks,400.0,400.0,0.0,0.5,computed,REPRODUCED,facility MW / 125 kW per rack
+T3.racks.100,Table 3,100 MW,Rack Count (NVL72),racks,800.0,800.0,0.0,0.5,computed,REPRODUCED,facility MW / 125 kW per rack
+T3.compute.25,Table 3,25 MW,Compute Potential,exaflops,280.0,280.0,0.0,0.5,computed,REPRODUCED,racks x 1.4 EFLOPS
+T3.compute.50,Table 3,50 MW,Compute Potential,exaflops,560.0,560.0,0.0,0.5,computed,REPRODUCED,racks x 1.4 EFLOPS
+T3.compute.100,Table 3,100 MW,Compute Potential,zettaflops,1.1,1.12,0.02,0.05,computed,REPRODUCED,racks x 1.4 EFLOPS
+T3.fabric.25,Table 3,25 MW,Internal Bandwidth (Fabric),petabits/s,320.0,320.0,0.0,0.5,computed,REPRODUCED,racks x 1.6 Pb/s
+T3.fabric.50,Table 3,50 MW,Internal Bandwidth (Fabric),petabits/s,640.0,640.0,0.0,0.5,computed,REPRODUCED,racks x 1.6 Pb/s
+T3.fabric.100,Table 3,100 MW,Internal Bandwidth (Fabric),exabits/s,1.28,1.28,0.0,0.005,computed,REPRODUCED,racks x 1.6 Pb/s
+T3.egress.25,Table 3,25 MW,External Bandwidth (Egress),terabits/s,200.0,200.0,0.0,0.5,computed,REPRODUCED,racks x 1 Tb/s
+T3.egress.50,Table 3,50 MW,External Bandwidth (Egress),terabits/s,400.0,400.0,0.0,0.5,computed,REPRODUCED,racks x 1 Tb/s
+T3.egress.100,Table 3,100 MW,External Bandwidth (Egress),terabits/s,800.0,800.0,0.0,0.5,computed,REPRODUCED,racks x 1 Tb/s
+S2.2.tokens,Section 2.2,100 MW,Tokens per second,billion tokens/s,36.6,18.333333,-18.266667,0.05,computed,DIFFERS,1.1e21 FLOP/s / (2 x 30e9): the paper's own equation; 36.7 results if the 2 is dropped
+T5.total.low.1mile,Table 5,Total Est. CapEx,1-Mile Line Rule,USD million,17.0,17.0,0.0,0.0,arithmetic,CONSISTENT,"Substation CapEx + Transmission Line, as printed"
+T5.total.high.1mile,Table 5,Total Est. CapEx,1-Mile Line Rule,USD million,30.0,30.0,0.0,0.0,arithmetic,CONSISTENT,"Substation CapEx + Transmission Line, as printed"
+T5.total.low.3mile,Table 5,Total Est. CapEx,3-Mile Substation Rule,USD million,12.0,11.0,-1.0,0.0,arithmetic,DIFFERS,"Substation CapEx + Transmission Line, as printed"
+T5.total.high.3mile,Table 5,Total Est. CapEx,3-Mile Substation Rule,USD million,27.0,25.0,-2.0,0.0,arithmetic,DIFFERS,"Substation CapEx + Transmission Line, as printed"
+T9.avg.25.Normal Day,Table 9,Phase 1 (25 MW) Normal Day,Avg Power,MW,12.9,12.928257,0.028257,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.25.Normal Day,Table 9,Phase 1 (25 MW) Normal Day,95th Percentile Peak,MW,20.7,20.73325,0.03325,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.25.Normal Day,Table 9,Phase 1 (25 MW) Normal Day,Min Idle Power,MW,5.0,5.0,0.0,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.25.High Usage (Spike),Table 9,Phase 1 (25 MW) Spike,Avg Power,MW,19.5,19.584051,0.084051,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.25.High Usage (Spike),Table 9,Phase 1 (25 MW) Spike,95th Percentile Peak,MW,25.0,25.0,0.0,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.25.High Usage (Spike),Table 9,Phase 1 (25 MW) Spike,Min Idle Power,MW,9.1,9.111817,0.011817,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.25.Weekend/Batch,Table 9,Phase 1 (25 MW) Weekend/Batch,Avg Power,MW,11.0,10.996024,-0.003976,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = rounded to 1 dp
+T9.p95.25.Weekend/Batch,Table 9,Phase 1 (25 MW) Weekend/Batch,95th Percentile Peak,MW,15.9,15.989,0.089,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.25.Weekend/Batch,Table 9,Phase 1 (25 MW) Weekend/Batch,Min Idle Power,MW,6.3,6.349555,0.049555,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.100.Normal Day,Table 9,Phase 2 (100 MW) Normal Day,Avg Power,MW,51.6,51.635,0.035,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.100.Normal Day,Table 9,Phase 2 (100 MW) Normal Day,95th Percentile Peak,MW,82.8,82.889237,0.089237,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.100.Normal Day,Table 9,Phase 2 (100 MW) Normal Day,Min Idle Power,MW,20.0,20.0,0.0,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.100.High Usage (Spike),Table 9,Phase 2 (100 MW) Spike,Avg Power,MW,78.2,78.286893,0.086893,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.100.High Usage (Spike),Table 9,Phase 2 (100 MW) Spike,95th Percentile Peak,MW,100.0,100.0,0.0,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.100.High Usage (Spike),Table 9,Phase 2 (100 MW) Spike,Min Idle Power,MW,37.7,37.758534,0.058534,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.100.Weekend/Batch,Table 9,Phase 2 (100 MW) Weekend/Batch,Avg Power,MW,43.9,43.980394,0.080394,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.100.Weekend/Batch,Table 9,Phase 2 (100 MW) Weekend/Batch,95th Percentile Peak,MW,63.7,63.701914,0.001914,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.100.Weekend/Batch,Table 9,Phase 2 (100 MW) Weekend/Batch,Min Idle Power,MW,24.4,24.438953,0.038953,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.250.Normal Day,Table 9,Phase 3 (250 MW) Normal Day,Avg Power,MW,129.2,129.259516,0.059516,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.250.Normal Day,Table 9,Phase 3 (250 MW) Normal Day,95th Percentile Peak,MW,208.4,208.429818,0.029818,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.250.Normal Day,Table 9,Phase 3 (250 MW) Normal Day,Min Idle Power,MW,50.0,50.0,0.0,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.250.High Usage (Spike),Table 9,Phase 3 (250 MW) Spike,Avg Power,MW,195.9,195.951119,0.051119,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.250.High Usage (Spike),Table 9,Phase 3 (250 MW) Spike,95th Percentile Peak,MW,250.0,250.0,0.0,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.250.High Usage (Spike),Table 9,Phase 3 (250 MW) Spike,Min Idle Power,MW,93.5,93.515532,0.015532,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.avg.250.Weekend/Batch,Table 9,Phase 3 (250 MW) Weekend/Batch,Avg Power,MW,109.8,109.872959,0.072959,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.p95.250.Weekend/Batch,Table 9,Phase 3 (250 MW) Weekend/Batch,95th Percentile Peak,MW,156.0,156.07595,0.07595,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T9.min.250.Weekend/Batch,Table 9,Phase 3 (250 MW) Weekend/Batch,Min Idle Power,MW,61.4,61.460085,0.060085,0.1,computed,REPRODUCED,reconstructed Monte Carlo (see demand.table9); published value = truncated to 1 dp
+T11.S1.Grid,Table 11,S1: Island,Grid,MW,100.0,100.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S1.RICE,Table 11,S1: Island,RICE,MW,150.0,150.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S1.BESS,Table 11,S1: Island,Hybrid BESS MW,MW,30.0,30.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S1.BESS_MWh,Table 11,S1: Island,Hybrid BESS MWh,MWh,150.0,150.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S2.Solar PPA,Table 11,S2: Hybrid PPA,Solar,MW,120.0,120.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S2.RICE,Table 11,S2: Hybrid PPA,RICE,MW,210.0,210.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S2.Grid,Table 11,S2: Hybrid PPA,Grid,MW,10.0,10.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S2.BESS,Table 11,S2: Hybrid PPA,Hybrid BESS MW,MW,35.0,35.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S2.BESS_MWh,Table 11,S2: Hybrid PPA,Hybrid BESS MWh,MWh,175.0,175.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S3.Geothermal,Table 11,S3: 100% Geo.,Geo.,MW,250.0,250.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S4.Geothermal,Table 11,S4: Geo + PPA,Geo.,MW,120.0,120.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S4.Solar PPA,Table 11,S4: Geo + PPA,Solar,MW,80.0,80.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S4.Grid,Table 11,S4: Geo + PPA,Grid,MW,130.0,130.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S4.BESS,Table 11,S4: Geo + PPA,Hybrid BESS MW,MW,25.0,25.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S4.BESS_MWh,Table 11,S4: Geo + PPA,Hybrid BESS MWh,MWh,125.0,125.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S5.SMR,Table 11,S5: SMR + PPA,SMR,MW,180.0,180.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S5.Solar PPA,Table 11,S5: SMR + PPA,Solar,MW,50.0,50.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S5.Grid,Table 11,S5: SMR + PPA,Grid,MW,70.0,70.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S6.Geothermal,Table 11,S6: Geo + Micro.,Geo.,MW,100.0,100.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S6.Microturbines,Table 11,S6: Geo + Micro.,Micro.,MW,80.0,80.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S6.Grid,Table 11,S6: Geo + Micro.,Grid,MW,50.0,50.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S6.BESS,Table 11,S6: Geo + Micro.,Hybrid BESS MW,MW,30.0,30.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T11.S6.BESS_MWh,Table 11,S6: Geo + Micro.,Hybrid BESS MWh,MWh,150.0,150.0,0.0,0.0,input,MATCHES,config.yaml installed_mw (BESS MWh = MW x 5 h)
+T12.capex.ERCOT Grid (345 kV),Table 12,ERCOT Grid (345 kV),CapEx,USD/kW,150.0,150.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fom.ERCOT Grid (345 kV),Table 12,ERCOT Grid (345 kV),Fixed O&M,USD/kW-yr,5.0,5.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.vom.ERCOT Grid (345 kV),Table 12,ERCOT Grid (345 kV),Var. O&M,USD/MWh,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fuel.ERCOT Grid (345 kV),Table 12,ERCOT Grid (345 kV),Fuel,USD/MWh,75.0,75.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.cf.ERCOT Grid (345 kV),Table 12,ERCOT Grid (345 kV),Cap. Factor,%,100.0,100.0,0.0,0.5,input,MATCHES,data/raw/technology_costs.csv
+T12.lcoe.ERCOT Grid (345 kV),Table 12,ERCOT Grid (345 kV),Calc. LCOE,USD/MWh,76.71,77.314821,0.604821,0.005,computed,DIFFERS,"discounted cash flow, lcoe_calcs.ipynb"
+T12.capex.Utility Solar PPA,Table 12,Utility Solar PPA,CapEx,USD/kW,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fom.Utility Solar PPA,Table 12,Utility Solar PPA,Fixed O&M,USD/kW-yr,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.vom.Utility Solar PPA,Table 12,Utility Solar PPA,Var. O&M,USD/MWh,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fuel.Utility Solar PPA,Table 12,Utility Solar PPA,Fuel,USD/MWh,35.0,35.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.cf.Utility Solar PPA,Table 12,Utility Solar PPA,Cap. Factor,%,28.0,28.0,0.0,0.5,input,MATCHES,data/raw/technology_costs.csv
+T12.lcoe.Utility Solar PPA,Table 12,Utility Solar PPA,Calc. LCOE,USD/MWh,35.0,35.0,0.0,0.005,computed,REPRODUCED,"discounted cash flow, lcoe_calcs.ipynb"
+T12.capex.RICE (Natural Gas),Table 12,RICE (Natural Gas),CapEx,USD/kW,1200.0,1200.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fom.RICE (Natural Gas),Table 12,RICE (Natural Gas),Fixed O&M,USD/kW-yr,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.vom.RICE (Natural Gas),Table 12,RICE (Natural Gas),Var. O&M,USD/MWh,15.0,15.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fuel.RICE (Natural Gas),Table 12,RICE (Natural Gas),Fuel,USD/MWh,29.75,29.75,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.cf.RICE (Natural Gas),Table 12,RICE (Natural Gas),Cap. Factor,%,90.0,90.0,0.0,0.5,input,MATCHES,data/raw/technology_costs.csv
+T12.lcoe.RICE (Natural Gas),Table 12,RICE (Natural Gas),Calc. LCOE,USD/MWh,60.27,60.252619,-0.017381,0.005,computed,DIFFERS,"discounted cash flow, lcoe_calcs.ipynb"
+T12.capex.Enhanced Geothermal,Table 12,Enhanced Geothermal,CapEx,USD/kW,4500.0,4500.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fom.Enhanced Geothermal,Table 12,Enhanced Geothermal,Fixed O&M,USD/kW-yr,115.0,115.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.vom.Enhanced Geothermal,Table 12,Enhanced Geothermal,Var. O&M,USD/MWh,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fuel.Enhanced Geothermal,Table 12,Enhanced Geothermal,Fuel,USD/MWh,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.cf.Enhanced Geothermal,Table 12,Enhanced Geothermal,Cap. Factor,%,95.0,95.0,0.0,0.5,input,MATCHES,data/raw/technology_costs.csv
+T12.lcoe.Enhanced Geothermal,Table 12,Enhanced Geothermal,Calc. LCOE,USD/MWh,68.61,61.850931,-6.759069,0.005,computed,DIFFERS,"discounted cash flow, lcoe_calcs.ipynb"
+T12.capex.Small Modular Reactor,Table 12,Small Modular Reactor,CapEx,USD/kW,7500.0,7500.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fom.Small Modular Reactor,Table 12,Small Modular Reactor,Fixed O&M,USD/kW-yr,120.0,120.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.vom.Small Modular Reactor,Table 12,Small Modular Reactor,Var. O&M,USD/MWh,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fuel.Small Modular Reactor,Table 12,Small Modular Reactor,Fuel,USD/MWh,8.32,8.32,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.cf.Small Modular Reactor,Table 12,Small Modular Reactor,Cap. Factor,%,95.0,95.0,0.0,0.5,input,MATCHES,data/raw/technology_costs.csv
+T12.lcoe.Small Modular Reactor,Table 12,Small Modular Reactor,Calc. LCOE,USD/MWh,93.24,98.316541,5.076541,0.005,computed,DIFFERS,"discounted cash flow, lcoe_calcs.ipynb"
+T12.capex.Microturbines,Table 12,Microturbines,CapEx,USD/kW,1500.0,1500.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fom.Microturbines,Table 12,Microturbines,Fixed O&M,USD/kW-yr,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.vom.Microturbines,Table 12,Microturbines,Var. O&M,USD/MWh,20.0,20.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fuel.Microturbines,Table 12,Microturbines,Fuel,USD/MWh,40.25,40.25,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.cf.Microturbines,Table 12,Microturbines,Cap. Factor,%,90.0,90.0,0.0,0.5,input,MATCHES,data/raw/technology_costs.csv
+T12.lcoe.Microturbines,Table 12,Microturbines,Calc. LCOE,USD/MWh,79.62,79.628274,0.008274,0.005,computed,DIFFERS,"discounted cash flow, lcoe_calcs.ipynb"
+T12.capex.Hybrid BESS (LCOS),Table 12,Hybrid BESS (LCOS),CapEx,USD/kW,1250.0,1250.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fom.Hybrid BESS (LCOS),Table 12,Hybrid BESS (LCOS),Fixed O&M,USD/kW-yr,10.0,10.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.vom.Hybrid BESS (LCOS),Table 12,Hybrid BESS (LCOS),Var. O&M,USD/MWh,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.fuel.Hybrid BESS (LCOS),Table 12,Hybrid BESS (LCOS),Fuel,USD/MWh,0.0,0.0,0.0,0.0,input,MATCHES,data/raw/technology_costs.csv
+T12.cf.Hybrid BESS (LCOS),Table 12,Hybrid BESS (LCOS),Cap. Factor,%,21.0,20.8,-0.2,0.5,input,MATCHES,data/raw/technology_costs.csv
+T12.lcoe.Hybrid BESS (LCOS),Table 12,Hybrid BESS (LCOS),Calc. LCOE,USD/MWh,88.58,85.499688,-3.080312,0.005,computed,DIFFERS,"discounted cash flow, lcoe_calcs.ipynb"
+T13.nameplate.100% Geothermal (S3),Table 13,100% Geothermal (S3),Nameplate Capacity,MW,300.0,300.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
+T13.dispatch.100% Geothermal (S3),Table 13,100% Geothermal (S3),Projected Annual Dispatch,MWh,2190000.0,2190000.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
+T13.possible.100% Geothermal (S3),Table 13,100% Geothermal (S3),Total Possible Generation,MWh,2628000.0,2628000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
+T13.cf.100% Geothermal (S3),Table 13,100% Geothermal (S3),Capacity Factor,%,83.33,83.333333,0.003333,0.005,computed,REPRODUCED,Eq. 7
+T13.rr.100% Geothermal (S3),Table 13,100% Geothermal (S3),Resilience Reserve,%,16.67,16.666667,-0.003333,0.005,computed,REPRODUCED,Eq. 8
+T13.nameplate.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Nameplate Capacity,MW,278.0,278.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
+T13.dispatch.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Projected Annual Dispatch,MWh,2190000.0,2190000.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
+T13.possible.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Total Possible Generation,MWh,2435280.0,2435280.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
+T13.cf.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Capacity Factor,%,89.93,89.928058,-0.001942,0.005,computed,REPRODUCED,Eq. 7
+T13.rr.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Resilience Reserve,%,10.07,10.071942,0.001942,0.005,computed,REPRODUCED,Eq. 8
+T13.nameplate.Microturbines (S6),Table 13,Microturbines (S6),Nameplate Capacity,MW,300.0,300.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
+T13.dispatch.Microturbines (S6),Table 13,Microturbines (S6),Projected Annual Dispatch,MWh,1182600.0,1182600.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
+T13.possible.Microturbines (S6),Table 13,Microturbines (S6),Total Possible Generation,MWh,2628000.0,2628000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
+T13.cf.Microturbines (S6),Table 13,Microturbines (S6),Capacity Factor,%,45.0,45.0,0.0,0.005,computed,REPRODUCED,Eq. 7
+T13.rr.Microturbines (S6),Table 13,Microturbines (S6),Resilience Reserve,%,55.0,55.0,0.0,0.005,computed,REPRODUCED,Eq. 8
+T13.nameplate.RICE Peaking (S1),Table 13,RICE Peaking (S1),Nameplate Capacity,MW,300.0,300.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
+T13.dispatch.RICE Peaking (S1),Table 13,RICE Peaking (S1),Projected Annual Dispatch,MWh,788400.0,788400.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
+T13.possible.RICE Peaking (S1),Table 13,RICE Peaking (S1),Total Possible Generation,MWh,2628000.0,2628000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
+T13.cf.RICE Peaking (S1),Table 13,RICE Peaking (S1),Capacity Factor,%,30.0,30.0,0.0,0.005,computed,REPRODUCED,Eq. 7
+T13.rr.RICE Peaking (S1),Table 13,RICE Peaking (S1),Resilience Reserve,%,70.0,70.0,0.0,0.005,computed,REPRODUCED,Eq. 8
+T13.nameplate.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Nameplate Capacity,MW,250.0,250.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
+T13.dispatch.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Projected Annual Dispatch,MWh,164250.0,164250.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
+T13.possible.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Total Possible Generation,MWh,2190000.0,2190000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
+T13.cf.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Capacity Factor,%,7.5,7.5,0.0,0.005,computed,REPRODUCED,Eq. 7
+T13.rr.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Resilience Reserve,%,92.5,92.5,0.0,0.005,computed,REPRODUCED,Eq. 8
+T14.Baseline,Table 14,Baseline,Est. Blended LCOE,USD/MWh,75.0,76.71,1.71,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S1,Table 14,S1 (Island),Est. Blended LCOE,USD/MWh,85.5,68.565366,-16.934634,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S2,Table 14,S2 (Hybrid PPA),Est. Blended LCOE,USD/MWh,72.4,57.380366,-15.019634,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S3,Table 14,S3 (Geo-Long),Est. Blended LCOE,USD/MWh,68.0,68.61,0.61,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S4,Table 14,S4 (Geo + PPA),Est. Blended LCOE,USD/MWh,64.5,66.911235,2.411235,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S5,Table 14,S5 (Nuclear),Est. Blended LCOE,USD/MWh,94.2,88.061678,-6.138322,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S6,Table 14,S6 (Geo + Micro),Est. Blended LCOE,USD/MWh,77.8,73.490551,-4.309449,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T15.maxbtm.S1,Table 15,S1: Island (RICE),Max BTM Output,MW,180.0,180.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
+T15.maxbtm.S2,Table 15,S2: Hybrid PPA,Max BTM Output,MW,245.0,245.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
+T15.maxbtm.S3,Table 15,S3: 100% Geothermal,Max BTM Output,MW,250.0,250.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
+T15.maxbtm.S4,Table 15,S4: Geo + PPA,Max BTM Output,MW,145.0,145.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
+T15.maxbtm.S5,Table 15,S5: SMR + PPA,Max BTM Output,MW,180.0,180.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
+T15.maxbtm.S6,Table 15,S6: Geo + Microturbines,Max BTM Output,MW,210.0,210.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
+T15.alolp.S1,Table 15,S1: Island (RICE),ALOLP,%,72.5,72.0,-0.5,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
+T15.alolp.S2,Table 15,S2: Hybrid PPA,ALOLP,%,91.2,98.0,6.8,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
+T15.alolp.S3,Table 15,S3: 100% Geothermal,ALOLP,%,99.9,100.0,0.1,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
+T15.alolp.S4,Table 15,S4: Geo + PPA,ALOLP,%,58.0,58.0,0.0,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
+T15.alolp.S5,Table 15,S5: SMR + PPA,ALOLP,%,72.0,72.0,0.0,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
+T15.alolp.S6,Table 15,S6: Geo + Microturbines,ALOLP,%,84.0,84.0,0.0,0.05,no code,NO CODE,observation only: max BTM output / 250 MW

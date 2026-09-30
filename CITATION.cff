@@ -1,0 +1,50 @@
+# No `doi:` for the software yet: the Zenodo concept DOI is added once, after the first
+# release, and never changed (code standard Part 5). The PAPER's DOI is below.
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "datacenter-btm-electricity-2026: code behind 'Megawatts to Zettaflops' (Electricity, 2026)"
+type: software
+authors:
+  - family-names: Jones
+    given-names: Erick C.
+    name-suffix: Jr.
+    orcid: "https://orcid.org/0000-0003-0559-4699"
+    affiliation: "University of Texas at Arlington"
+  - family-names: Jones
+    given-names: Erick C.
+    name-suffix: Sr.
+    affiliation: "Prairie View A&M University"
+repository-code: "https://github.com/sear-labs/datacenter-btm-electricity-2026"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - data centers
+  - behind-the-meter generation
+  - techno-economic analysis
+  - levelized cost of energy
+  - Monte Carlo
+  - ERCOT
+  - enhanced geothermal
+  - battery energy storage
+preferred-citation:
+  type: article
+  title: "Megawatts to Zettaflops: A Techno-Economic Framework for Grid-Tied Behind-the-Meter Architectures in AI Data Centers"
+  year: 2026
+  month: 5
+  journal: "Electricity"
+  volume: 7
+  issue: 2
+  start: 43
+  doi: "10.3390/electricity7020043"
+  url: "https://www.mdpi.com/2673-4826/7/2/43"
+  authors:
+    - family-names: Jones
+      given-names: Erick C.
+      name-suffix: Jr.
+      orcid: "https://orcid.org/0000-0003-0559-4699"
+      affiliation: "University of Texas at Arlington"
+    - family-names: Jones
+      given-names: Erick C.
+      name-suffix: Sr.
+      affiliation: "Prairie View A&M University"

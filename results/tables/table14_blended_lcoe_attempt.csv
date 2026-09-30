@@ -1,0 +1,8 @@
+scenario,energy_mwh_day,blended_lcoe_usd_per_mwh
+Baseline (100% Grid),4678.772969,76.71
+S1: Grid + RICE + Hybrid BESS,4858.772969,68.565366
+S2: Solar PPA + RICE + Hybrid BESS + Grid,4853.772969,57.380366
+S3: 100% Geothermal Baseload,4678.772969,68.61
+S4: Geothermal + Solar PPA + Hybrid BESS + Grid,4803.772969,66.911235
+S5: SMR + Solar PPA + Grid,4678.772969,88.061678
+S6: Geothermal + Grid + Microturbines + Hybrid BESS,4858.772969,73.490551

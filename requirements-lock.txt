@@ -1,0 +1,30 @@
+# What actually ran: pip freeze of the environment that produced results/ (2026-09-30).
+# Python 3.12.14 (conda-forge), Windows 11. numpy/pandas/matplotlib/cartopy are the versions
+# Colab recorded when the published figures were made (maps_for_dc.ipynb, cell 0).
+# Install with:  pip install -r requirements-lock.txt && pip install -e . --no-deps
+Cartopy==0.25.0
+certifi==2026.7.22
+colorama==0.4.6; sys_platform == "win32"
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.66.1
+iniconfig==2.3.0
+kiwisolver==1.5.1
+matplotlib==3.10.0
+numpy==2.0.2
+packaging==26.3
+pandas==2.2.2
+pillow==11.3.0
+pluggy==1.6.0
+Pygments==2.21.0
+pyparsing==3.3.3
+pyproj==3.8.0
+pyshp==3.1.6
+pytest==8.4.2
+python-dateutil==2.9.0.post0
+pytz==2026.4
+PyYAML==6.0.3
+ruff==0.16.9
+shapely==2.1.2
+six==1.17.0
+tzdata==2026.4
