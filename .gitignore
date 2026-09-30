@@ -1,0 +1,69 @@
+# From sear-labs/code-standard gitignore-starter, adjusted for this repository.
+# Verify, don't assume:  git check-ignore -v <each secret file>
+
+# --- credentials: the one mistake that cannot be undone -----------------
+.env
+.env.*
+*.lic
+gamslice.txt
+gamslice*.txt
+*license.dat
+*licence.dat
+WLSKeyinfo*
+*.pem
+*.key
+*_key*
+*_secret*
+*credentials*
+*token*
+service-account*.json
+
+# --- data ------------------------------------------------------------------
+# data/raw/ IS committed here, deliberately: every table in it is small, public and
+# written by the authors from the paper and its cited sources (see README, "Data").
+# Nothing in this repository needs an interim or processed tier; they stay ignored
+# so one cannot appear by accident.
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+
+# --- generated results -----------------------------------------------------
+# Deliberate exception (standard Part 1 rule 5): final tables, figures and the
+# reproduction report ARE committed, so a reader sees outputs without running anything.
+results/*
+!results/figures/
+!results/tables/
+!results/reproduction_report.md
+!results/**/.gitkeep
+
+# --- python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# --- solver / tool noise -----------------------------------------------------
+*.log
+*.lp
+*.mps
+*.sol
+*.ilp
+
+# --- editor backups ----------------------------------------------------------
+*.bak
+*.orig
+*~
+
+# --- os / editor / harness ---------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.claude/
