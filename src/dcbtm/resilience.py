@@ -1,6 +1,6 @@
-"""Resilience: paper Section 4.6, Eqs. 9-10, Table 15.
+"""Resilience: paper Section 4.6, Eqs. 11-12, Table 15.
 
-No code in the source material computes ALOLP. Eq. 9 sums, over 8,760 hours, the
+No code in the source material computes ALOLP. Eq. 11 sums, over 8,760 hours, the
 probability that IT load exceeds grid plus BTM capacity; nothing implements it, and no
 outage model exists. What CAN be reproduced is the "Max BTM Output" column: it is the sum
 of each scenario's dispatchable on-site capacity in Table 11 (everything but solar and

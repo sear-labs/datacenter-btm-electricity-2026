@@ -111,28 +111,28 @@ T12.lcoe.Hybrid BESS (LCOS),Table 12,Hybrid BESS (LCOS),Calc. LCOE,USD/MWh,88.58
 T13.nameplate.100% Geothermal (S3),Table 13,100% Geothermal (S3),Nameplate Capacity,MW,300.0,300.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
 T13.dispatch.100% Geothermal (S3),Table 13,100% Geothermal (S3),Projected Annual Dispatch,MWh,2190000.0,2190000.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
 T13.possible.100% Geothermal (S3),Table 13,100% Geothermal (S3),Total Possible Generation,MWh,2628000.0,2628000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
-T13.cf.100% Geothermal (S3),Table 13,100% Geothermal (S3),Capacity Factor,%,83.33,83.333333,0.003333,0.005,computed,REPRODUCED,Eq. 7
-T13.rr.100% Geothermal (S3),Table 13,100% Geothermal (S3),Resilience Reserve,%,16.67,16.666667,-0.003333,0.005,computed,REPRODUCED,Eq. 8
+T13.cf.100% Geothermal (S3),Table 13,100% Geothermal (S3),Capacity Factor,%,83.33,83.333333,0.003333,0.005,computed,REPRODUCED,Eq. 9
+T13.rr.100% Geothermal (S3),Table 13,100% Geothermal (S3),Resilience Reserve,%,16.67,16.666667,-0.003333,0.005,computed,REPRODUCED,Eq. 10
 T13.nameplate.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Nameplate Capacity,MW,278.0,278.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
 T13.dispatch.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Projected Annual Dispatch,MWh,2190000.0,2190000.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
 T13.possible.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Total Possible Generation,MWh,2435280.0,2435280.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
-T13.cf.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Capacity Factor,%,89.93,89.928058,-0.001942,0.005,computed,REPRODUCED,Eq. 7
-T13.rr.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Resilience Reserve,%,10.07,10.071942,0.001942,0.005,computed,REPRODUCED,Eq. 8
+T13.cf.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Capacity Factor,%,89.93,89.928058,-0.001942,0.005,computed,REPRODUCED,Eq. 9
+T13.rr.SMR Nuclear (S5),Table 13,SMR Nuclear (S5),Resilience Reserve,%,10.07,10.071942,0.001942,0.005,computed,REPRODUCED,Eq. 10
 T13.nameplate.Microturbines (S6),Table 13,Microturbines (S6),Nameplate Capacity,MW,300.0,300.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
 T13.dispatch.Microturbines (S6),Table 13,Microturbines (S6),Projected Annual Dispatch,MWh,1182600.0,1182600.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
 T13.possible.Microturbines (S6),Table 13,Microturbines (S6),Total Possible Generation,MWh,2628000.0,2628000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
-T13.cf.Microturbines (S6),Table 13,Microturbines (S6),Capacity Factor,%,45.0,45.0,0.0,0.005,computed,REPRODUCED,Eq. 7
-T13.rr.Microturbines (S6),Table 13,Microturbines (S6),Resilience Reserve,%,55.0,55.0,0.0,0.005,computed,REPRODUCED,Eq. 8
+T13.cf.Microturbines (S6),Table 13,Microturbines (S6),Capacity Factor,%,45.0,45.0,0.0,0.005,computed,REPRODUCED,Eq. 9
+T13.rr.Microturbines (S6),Table 13,Microturbines (S6),Resilience Reserve,%,55.0,55.0,0.0,0.005,computed,REPRODUCED,Eq. 10
 T13.nameplate.RICE Peaking (S1),Table 13,RICE Peaking (S1),Nameplate Capacity,MW,300.0,300.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
 T13.dispatch.RICE Peaking (S1),Table 13,RICE Peaking (S1),Projected Annual Dispatch,MWh,788400.0,788400.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
 T13.possible.RICE Peaking (S1),Table 13,RICE Peaking (S1),Total Possible Generation,MWh,2628000.0,2628000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
-T13.cf.RICE Peaking (S1),Table 13,RICE Peaking (S1),Capacity Factor,%,30.0,30.0,0.0,0.005,computed,REPRODUCED,Eq. 7
-T13.rr.RICE Peaking (S1),Table 13,RICE Peaking (S1),Resilience Reserve,%,70.0,70.0,0.0,0.005,computed,REPRODUCED,Eq. 8
+T13.cf.RICE Peaking (S1),Table 13,RICE Peaking (S1),Capacity Factor,%,30.0,30.0,0.0,0.005,computed,REPRODUCED,Eq. 9
+T13.rr.RICE Peaking (S1),Table 13,RICE Peaking (S1),Resilience Reserve,%,70.0,70.0,0.0,0.005,computed,REPRODUCED,Eq. 10
 T13.nameplate.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Nameplate Capacity,MW,250.0,250.0,0.0,0.05,input,MATCHES,data/raw/asset_utilization.csv
 T13.dispatch.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Projected Annual Dispatch,MWh,164250.0,164250.0,0.0,0.5,input,MATCHES,"data/raw/asset_utilization.csv (an assumption, not a dispatch output)"
 T13.possible.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Total Possible Generation,MWh,2190000.0,2190000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
-T13.cf.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Capacity Factor,%,7.5,7.5,0.0,0.005,computed,REPRODUCED,Eq. 7
-T13.rr.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Resilience Reserve,%,92.5,92.5,0.0,0.005,computed,REPRODUCED,Eq. 8
+T13.cf.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Capacity Factor,%,7.5,7.5,0.0,0.005,computed,REPRODUCED,Eq. 9
+T13.rr.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Resilience Reserve,%,92.5,92.5,0.0,0.005,computed,REPRODUCED,Eq. 10
 T14.Baseline,Table 14,Baseline,Est. Blended LCOE,USD/MWh,75.0,76.71,1.71,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
 T14.S1,Table 14,S1 (Island),Est. Blended LCOE,USD/MWh,85.5,68.565366,-16.934634,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
 T14.S2,Table 14,S2 (Hybrid PPA),Est. Blended LCOE,USD/MWh,72.4,57.380366,-15.019634,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy

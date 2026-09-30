@@ -1,4 +1,4 @@
-"""Asset utilisation: paper Section 5.2.2, Eqs. 7-8, Table 13 and Figure 6.
+"""Asset utilisation: paper Section 5.2.2, Eqs. 9-10, Table 13 and Figure 6.
 
 Ported from ``archive/notebooks/utilization_rates.ipynb``.
 

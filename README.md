@@ -88,7 +88,7 @@ Recorded so nobody mistakes one for the other.
 - **Dispatch is one day, not a year.** The paper describes an hourly 8,760-hour dispatch with state
   of charge, 88 % round-trip efficiency and ramp limits. The code dispatches one representative day
   on a 96-point grid by fixed rules, with none of those.
-- **The dispatch day uses different noise.** Eq. 2 clips utilisation at 0 with the Monte Carlo's
+- **The dispatch day uses different noise.** Eq. 3 clips utilisation at 0 with the Monte Carlo's
   volatility (0.15). The dispatch day uses volatility 0.05 and a floor of 0.1 (`config.yaml`, marked).
 - **Table 13's dispatch column is an input.** The paper calls it internally derived; in the code it
   is a duty assumption per asset (`data/raw/asset_utilization.csv`), from which capacity factor and

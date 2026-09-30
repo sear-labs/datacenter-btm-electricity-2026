@@ -84,8 +84,8 @@ def computed_values(r: dict, cfg: dict, published: pd.DataFrame) -> dict[str, tu
         v[f"T13.dispatch.{a}"] = ("input", row.projected_annual_mwh,
                                   "data/raw/asset_utilization.csv (an assumption, not a dispatch output)")
         v[f"T13.possible.{a}"] = ("computed", row.total_possible_mwh, "nameplate x 8760")
-        v[f"T13.cf.{a}"] = ("computed", row.capacity_factor_pct, "Eq. 7")
-        v[f"T13.rr.{a}"] = ("computed", row.resilience_reserve_pct, "Eq. 8")
+        v[f"T13.cf.{a}"] = ("computed", row.capacity_factor_pct, "Eq. 9")
+        v[f"T13.rr.{a}"] = ("computed", row.resilience_reserve_pct, "Eq. 10")
 
     blend = r["blended"].set_index("scenario")["blended_lcoe_usd_per_mwh"]
     titles = {"Baseline": "Baseline (100% Grid)",

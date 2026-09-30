@@ -1,4 +1,4 @@
-"""Stochastic 24-hour demand: paper Section 4.3, Eqs. 1-5, Figure 4 and Table 9.
+"""Stochastic 24-hour demand: paper Section 4.3, Eqs. 2-6, Figure 4 and Table 9.
 
 Ported from ``archive/notebooks/data_center_demand_mc.ipynb``. Expression order and
 random-number consumption are kept exactly as the notebook had them, so the port agrees
@@ -20,7 +20,7 @@ def time_grid(time_steps: int) -> np.ndarray:
 
 
 def base_utilization(scenario: str, t: np.ndarray) -> np.ndarray:
-    """The deterministic diurnal baseline mu(t) of Eqs. 3-5."""
+    """The deterministic diurnal baseline mu(t) of Eqs. 4-6."""
     if scenario == "Normal Day":
         u = 0.4 + 0.3 * np.sin(np.pi * (t - 6) / 12) + 0.1 * np.sin(np.pi * (t - 14) / 6)
     elif scenario == "High Usage (Spike)":
@@ -35,8 +35,8 @@ def base_utilization(scenario: str, t: np.ndarray) -> np.ndarray:
 def simulate(scenario: str, cap_mw: float, rng: np.random.RandomState, cfg: dict) -> np.ndarray:
     """Monte Carlo draws of total facility power, shape (iterations, time_steps), in MW.
 
-    Eq. 1: P_total = [P_idle + (P_max_IT - P_idle) * U_sim] * PUE, hard-capped at cap_mw.
-    Eq. 2: U_sim = clip(mu + eps, 0, 1), eps a 4-step rolling mean of N(0, volatility).
+    Eq. 2: P_total = [P_idle + (P_max_IT - P_idle) * U_sim] * PUE, hard-capped at cap_mw.
+    Eq. 3: U_sim = clip(mu + eps, 0, 1), eps a 4-step rolling mean of N(0, volatility).
     """
     d = cfg["demand"]
     T, n = d["time_steps"], d["iterations"]

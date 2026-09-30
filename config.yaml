@@ -4,7 +4,7 @@
 
 seed: 42  # every stochastic stage starts a fresh legacy RandomState(42), as the notebooks did
 
-demand:  # Section 4.3, Eqs. 1-5, Figure 4 and Table 9 -- data_center_demand_mc.ipynb
+demand:  # Section 4.3, Eqs. 2-6, Figure 4 and Table 9 -- data_center_demand_mc.ipynb
   pue: 1.2
   idle_fraction: 0.20          # servers draw 20% of maximum IT power when idle
   time_steps: 96               # 15-minute intervals over 24 h
@@ -19,7 +19,7 @@ dispatch:  # Section 5.1, Figure 5 and Table 11 -- scenarios_gen.ipynb, cell 1
   facility_mw: 250             # Phase 3
   demand_scenario: "High Usage (Spike)"
   volatility: 0.05             # NOTE: differs from demand.volatility; see README, "Known differences"
-  utilization_floor: 0.1       # NOTE: the paper's Eq. 2 clips at 0; this stage clips at 0.1
+  utilization_floor: 0.1       # NOTE: the paper's Eq. 3 clips at 0; this stage clips at 0.1
   smoothing_window: 4
   windows_h:                   # inclusive hour-of-day windows on the 96-step grid
     daylight: [7, 19]          # solar output sin(pi (t - 7) / 12), peak at 13:00
@@ -74,13 +74,13 @@ dispatch:  # Section 5.1, Figure 5 and Table 11 -- scenarios_gen.ipynb, cell 1
       installed_mw: {Geothermal: 100, Microturbines: 80, Grid: 50, BESS: 30}
   bess_duration_h: 5           # Table 11 MWh = MW x 5 h (Section 4.4: a 5-hour system)
 
-lcoe:  # Section 4.5, Eq. 6, Table 12 -- lcoe_calcs.ipynb; inputs in data/raw/technology_costs.csv
+lcoe:  # Section 4.5, Eq. 7, Table 12 -- lcoe_calcs.ipynb; inputs in data/raw/technology_costs.csv
   discount_rate: 0.08
   reference_kw: 1000           # 1 MW reference plant
   hours_per_year: 8760
   bess_mwh_per_day: 5          # one full 5-hour cycle of a 1 MW system per day
 
-utilization:  # Section 5.2.2, Eqs. 7-8, Table 13, Figure 6 -- utilization_rates.ipynb
+utilization:  # Section 5.2.2, Eqs. 9-10, Table 13, Figure 6 -- utilization_rates.ipynb
   hours_per_year: 8760         # inputs in data/raw/asset_utilization.csv
 
 scale:  # Section 2.2, Eq. for tokens per second, Table 3 -- no notebook; paper text

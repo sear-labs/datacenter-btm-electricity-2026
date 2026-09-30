@@ -1,4 +1,4 @@
-"""Technology LCOE: paper Section 4.5, Eq. 6, Table 12; and the Table 14 blend.
+"""Technology LCOE: paper Section 4.5, Eq. 7, Table 12; and the Table 14 blend.
 
 Ported from ``archive/notebooks/lcoe_calcs.ipynb``: a 1 MW reference plant, capital spent
 in year 0, operating cost and energy discounted from year 1 to the end of life.
