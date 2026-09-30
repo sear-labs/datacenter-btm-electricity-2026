@@ -10,8 +10,9 @@ Every item gets a KIND, which says what claim is being tested:
     computed     the code computes it; REPRODUCED or DIFFERS
     input        it is an input (data/raw or config.yaml); MATCHES or DIFFERS from the paper
     arithmetic   the paper's own rows should sum to its total; CONSISTENT or DIFFERS
-    no code      nothing in the source material computes it; NO CODE. Where a best attempt
-                 or an observation exists it is shown beside it, and is not a reproduction.
+    code not found   the authors computed it, but the code that did was not found (searched
+                 2026-09-30; see README). CODE NOT FOUND. Where a best attempt or an observation
+                 exists it is shown beside it, and is not a reproduction.
 """
 from __future__ import annotations
 
@@ -91,13 +92,13 @@ def computed_values(r: dict, cfg: dict, published: pd.DataFrame) -> dict[str, tu
     titles = {"Baseline": "Baseline (100% Grid)",
               **{k: s["title"] for k, s in cfg["dispatch"]["scenarios"].items()}}
     for k, title in titles.items():
-        v[f"T14.{k}"] = ("no code", blend[title],
+        v[f"T14.{k}"] = ("code not found", blend[title],
                          "attempt: Table 12 published LCOEs weighted by the one-day dispatch energy")
 
     for row in r["max_btm"].itertuples():
         v[f"T15.maxbtm.{row.scenario}"] = ("computed", row.max_btm_output_mw,
                                            "sum of Table 11 dispatchable BTM assets (not solar, not grid)")
-        v[f"T15.alolp.{row.scenario}"] = ("no code", row.share_of_critical_load_pct,
+        v[f"T15.alolp.{row.scenario}"] = ("code not found", row.share_of_critical_load_pct,
                                           "observation only: max BTM output / 250 MW")
     return v
 
@@ -110,12 +111,12 @@ def check(r: dict, cfg: dict, published: pd.DataFrame) -> pd.DataFrame:
         if "operand of" in str(p.get("note") or ""):
             continue  # printed values that another check sums; not claims in their own right
         if item not in comp:
-            raise KeyError(f"published item {item} has no computed counterpart; add it or mark it no code")
+            raise KeyError(f"published item {item} has no computed counterpart; add it or mark it code not found")
         kind, x, basis = comp[item]
         pv, tol = float(p["value"]), float(p["tol"])
         delta = x - pv
-        if kind == "no code":
-            status = "NO CODE"
+        if kind == "code not found":
+            status = "CODE NOT FOUND"
         else:
             ok = abs(delta) <= tol + 1e-9
             status = STATUS[kind][0 if ok else 1]
@@ -161,20 +162,20 @@ def report(chk: pd.DataFrame, figures: list[dict], extras: dict, path: Path) -> 
          "with what this repository computes. Published values: `data/published/published_values.csv`.",
          "Full item list: `results/tables/reproduction_check.csv`.", "",
          f"Run environment: {_versions()}.", "", "## Summary by table", "",
-         "| Table | Items | " + " | ".join(["REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "NO CODE"]) + " |",
+         "| Table | Items | " + " | ".join(["REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "CODE NOT FOUND"]) + " |",
          "|---|---|---|---|---|---|---|"]
     for t, g in chk.groupby("table", sort=False):
         c = g["status"].value_counts()
         L.append(f"| {t} | {len(g)} | " + " | ".join(str(c.get(s, 0)) for s in
-                 ["REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "NO CODE"]) + " |")
+                 ["REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "CODE NOT FOUND"]) + " |")
     c = chk["status"].value_counts()
     L += [f"| **All** | **{len(chk)}** | " + " | ".join(f"**{c.get(s, 0)}**" for s in
-          ["REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "NO CODE"]) + " |", "",
+          ["REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "CODE NOT FOUND"]) + " |", "",
           "## What does not reproduce", "",
-          "Every item whose status is DIFFERS or NO CODE. For NO CODE, *computed* is a best attempt",
+          "Every item whose status is DIFFERS or CODE NOT FOUND. For the latter, *computed* is a best attempt",
           "or an observation, labelled in *basis*; it is not a reproduction.", "",
           "| Item | Published | Computed | Delta | Status | Basis |", "|---|---|---|---|---|---|"]
-    for r in chk[chk["status"].isin(["DIFFERS", "NO CODE"])].itertuples():
+    for r in chk[chk["status"].isin(["DIFFERS", "CODE NOT FOUND"])].itertuples():
         L.append(f"| {r.table}: {r.row} / {r.column} | {_fmt(r.published)} | {_fmt(r.computed)} | "
                  f"{_fmt(r.delta)} | {r.status} | {r.basis} |")
     t9 = chk[chk["table"] == "Table 9"]

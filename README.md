@@ -61,14 +61,19 @@ change without the test changing too.
 
 1. **Table 12, LCOE.** The inputs match exactly, but the computed column does not: Grid 77.31
    (published 76.71), EGS 61.85 (68.61), SMR 98.32 (93.24), BESS 85.50 (88.58), RICE 60.25 (60.27),
-   microturbines 79.63 (79.62). Only solar (35.00) agrees. No single discount rate, lifetime or
-   capacity factor reproduces the published column, and it has been the same since the first
-   submission, so it was not produced by the version of `lcoe_calcs.ipynb` that survives.
-2. **Table 14, blended LCOE.** No code in the source material computes it. Applying the method the
+   microturbines 79.63 (79.62). Only solar (35.00) agrees. The formula is not the difference: RICE
+   and microturbines need their printed capital cost to within $1/kW to give the published values.
+   Grid, EGS, SMR and BESS instead need about $98, $5,130, $7,000 and $1,300/kW against the printed
+   $150, $4,500, $7,500 and $1,250. So the published column was computed with the same formula from
+   different inputs for those four technologies than the table prints. 672 alternative conventions
+   (discount rate, timing, escalation, lifetimes) were also tried; none reproduces the column. Which
+   inputs were used cannot be recovered: for EGS, nine different combinations fit exactly.
+2. **Table 14, blended LCOE.** The code that produced it has not been found. Applying the method the
    paper describes (Table 12 LCOEs weighted by dispatched energy) to the one simulated day gives
    different numbers; `results/tables/table14_blended_lcoe_attempt.csv` shows them as an attempt,
    not a reproduction.
-3. **Table 15, ALOLP.** No code computes it, and there is no outage model. For S4, S5 and S6 the
+3. **Table 15, ALOLP.** The code that produced it has not been found, and the paper gives no outage
+   probabilities to rebuild it from. For S4, S5 and S6 the
    published value equals Max BTM Output ÷ 250 MW exactly; for S1 (72.5 vs 72.0) and S2 (91.2 vs
    98.0) it does not. That is an observation, not a reconstruction.
 4. **Section 2.2, tokens per second.** The paper's own equation, 1.1 × 10²¹ FLOP/s ÷ (2 × 30 × 10⁹),
@@ -79,6 +84,15 @@ change without the test changing too.
 run in MW: one random stream seeded 42, phases in the outer loop, then the mean of the per-step
 median, the maximum of the per-step 95th percentile and the minimum of the per-step 5th. The
 published values are these **truncated** to one decimal in 26 of 27 cells.
+
+## The missing code
+
+Tables 12 (the four LCOEs above), 14 and 15 were computed with code that was later lost. On
+2026-09-30 it was searched for by reading the contents of every notebook and script in the authors'
+personal and lab Google Drives, UT Arlington OneDrive, and local disks (about 120,000 code files),
+for the published values and for the paper's vocabulary, with a positive control each time; and the
+authors' Claude chat history was searched from within Claude. It was not found. If it turns up, it goes into `archive/`
+verbatim, and these items move to REPRODUCED or DIFFERS with the reason known.
 
 ## Where the code and the paper's methods differ
 

@@ -133,22 +133,22 @@ T13.dispatch.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Projected 
 T13.possible.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Total Possible Generation,MWh,2190000.0,2190000.0,0.0,0.5,computed,REPRODUCED,nameplate x 8760
 T13.cf.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Capacity Factor,%,7.5,7.5,0.0,0.005,computed,REPRODUCED,Eq. 9
 T13.rr.Tiered-Performance BESS,Table 13,Tiered-Performance BESS,Resilience Reserve,%,92.5,92.5,0.0,0.005,computed,REPRODUCED,Eq. 10
-T14.Baseline,Table 14,Baseline,Est. Blended LCOE,USD/MWh,75.0,76.71,1.71,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
-T14.S1,Table 14,S1 (Island),Est. Blended LCOE,USD/MWh,85.5,68.565366,-16.934634,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
-T14.S2,Table 14,S2 (Hybrid PPA),Est. Blended LCOE,USD/MWh,72.4,57.380366,-15.019634,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
-T14.S3,Table 14,S3 (Geo-Long),Est. Blended LCOE,USD/MWh,68.0,68.61,0.61,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
-T14.S4,Table 14,S4 (Geo + PPA),Est. Blended LCOE,USD/MWh,64.5,66.911235,2.411235,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
-T14.S5,Table 14,S5 (Nuclear),Est. Blended LCOE,USD/MWh,94.2,88.061678,-6.138322,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
-T14.S6,Table 14,S6 (Geo + Micro),Est. Blended LCOE,USD/MWh,77.8,73.490551,-4.309449,0.005,no code,NO CODE,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.Baseline,Table 14,Baseline,Est. Blended LCOE,USD/MWh,75.0,76.71,1.71,0.005,code not found,CODE NOT FOUND,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S1,Table 14,S1 (Island),Est. Blended LCOE,USD/MWh,85.5,68.565366,-16.934634,0.005,code not found,CODE NOT FOUND,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S2,Table 14,S2 (Hybrid PPA),Est. Blended LCOE,USD/MWh,72.4,57.380366,-15.019634,0.005,code not found,CODE NOT FOUND,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S3,Table 14,S3 (Geo-Long),Est. Blended LCOE,USD/MWh,68.0,68.61,0.61,0.005,code not found,CODE NOT FOUND,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S4,Table 14,S4 (Geo + PPA),Est. Blended LCOE,USD/MWh,64.5,66.911235,2.411235,0.005,code not found,CODE NOT FOUND,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S5,Table 14,S5 (Nuclear),Est. Blended LCOE,USD/MWh,94.2,88.061678,-6.138322,0.005,code not found,CODE NOT FOUND,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
+T14.S6,Table 14,S6 (Geo + Micro),Est. Blended LCOE,USD/MWh,77.8,73.490551,-4.309449,0.005,code not found,CODE NOT FOUND,attempt: Table 12 published LCOEs weighted by the one-day dispatch energy
 T15.maxbtm.S1,Table 15,S1: Island (RICE),Max BTM Output,MW,180.0,180.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
 T15.maxbtm.S2,Table 15,S2: Hybrid PPA,Max BTM Output,MW,245.0,245.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
 T15.maxbtm.S3,Table 15,S3: 100% Geothermal,Max BTM Output,MW,250.0,250.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
 T15.maxbtm.S4,Table 15,S4: Geo + PPA,Max BTM Output,MW,145.0,145.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
 T15.maxbtm.S5,Table 15,S5: SMR + PPA,Max BTM Output,MW,180.0,180.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
 T15.maxbtm.S6,Table 15,S6: Geo + Microturbines,Max BTM Output,MW,210.0,210.0,0.0,0.0,computed,REPRODUCED,"sum of Table 11 dispatchable BTM assets (not solar, not grid)"
-T15.alolp.S1,Table 15,S1: Island (RICE),ALOLP,%,72.5,72.0,-0.5,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
-T15.alolp.S2,Table 15,S2: Hybrid PPA,ALOLP,%,91.2,98.0,6.8,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
-T15.alolp.S3,Table 15,S3: 100% Geothermal,ALOLP,%,99.9,100.0,0.1,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
-T15.alolp.S4,Table 15,S4: Geo + PPA,ALOLP,%,58.0,58.0,0.0,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
-T15.alolp.S5,Table 15,S5: SMR + PPA,ALOLP,%,72.0,72.0,0.0,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
-T15.alolp.S6,Table 15,S6: Geo + Microturbines,ALOLP,%,84.0,84.0,0.0,0.05,no code,NO CODE,observation only: max BTM output / 250 MW
+T15.alolp.S1,Table 15,S1: Island (RICE),ALOLP,%,72.5,72.0,-0.5,0.05,code not found,CODE NOT FOUND,observation only: max BTM output / 250 MW
+T15.alolp.S2,Table 15,S2: Hybrid PPA,ALOLP,%,91.2,98.0,6.8,0.05,code not found,CODE NOT FOUND,observation only: max BTM output / 250 MW
+T15.alolp.S3,Table 15,S3: 100% Geothermal,ALOLP,%,99.9,100.0,0.1,0.05,code not found,CODE NOT FOUND,observation only: max BTM output / 250 MW
+T15.alolp.S4,Table 15,S4: Geo + PPA,ALOLP,%,58.0,58.0,0.0,0.05,code not found,CODE NOT FOUND,observation only: max BTM output / 250 MW
+T15.alolp.S5,Table 15,S5: SMR + PPA,ALOLP,%,72.0,72.0,0.0,0.05,code not found,CODE NOT FOUND,observation only: max BTM output / 250 MW
+T15.alolp.S6,Table 15,S6: Geo + Microturbines,ALOLP,%,84.0,84.0,0.0,0.05,code not found,CODE NOT FOUND,observation only: max BTM output / 250 MW

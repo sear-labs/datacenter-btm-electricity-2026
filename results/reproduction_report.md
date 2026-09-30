@@ -10,7 +10,7 @@ Run environment: Python 3.12.14 on Windows AMD64, numpy 2.0.2, pandas 2.2.2, mat
 
 ## Summary by table
 
-| Table | Items | REPRODUCED | MATCHES | CONSISTENT | DIFFERS | NO CODE |
+| Table | Items | REPRODUCED | MATCHES | CONSISTENT | DIFFERS | CODE NOT FOUND |
 |---|---|---|---|---|---|---|
 | Table 3 | 12 | 12 | 0 | 0 | 0 | 0 |
 | Section 2.2 | 1 | 0 | 0 | 0 | 1 | 0 |
@@ -25,7 +25,7 @@ Run environment: Python 3.12.14 on Windows AMD64, numpy 2.0.2, pandas 2.2.2, mat
 
 ## What does not reproduce
 
-Every item whose status is DIFFERS or NO CODE. For NO CODE, *computed* is a best attempt
+Every item whose status is DIFFERS or CODE NOT FOUND. For the latter, *computed* is a best attempt
 or an observation, labelled in *basis*; it is not a reproduction.
 
 | Item | Published | Computed | Delta | Status | Basis |
@@ -39,19 +39,19 @@ or an observation, labelled in *basis*; it is not a reproduction.
 | Table 12: Small Modular Reactor / Calc. LCOE | 93.24 | 98.3165 | 5.0765 | DIFFERS | discounted cash flow, lcoe_calcs.ipynb |
 | Table 12: Microturbines / Calc. LCOE | 79.62 | 79.6283 | 0.0083 | DIFFERS | discounted cash flow, lcoe_calcs.ipynb |
 | Table 12: Hybrid BESS (LCOS) / Calc. LCOE | 88.58 | 85.4997 | -3.0803 | DIFFERS | discounted cash flow, lcoe_calcs.ipynb |
-| Table 14: Baseline / Est. Blended LCOE | 75 | 76.71 | 1.71 | NO CODE | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
-| Table 14: S1 (Island) / Est. Blended LCOE | 85.5 | 68.5654 | -16.9346 | NO CODE | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
-| Table 14: S2 (Hybrid PPA) / Est. Blended LCOE | 72.4 | 57.3804 | -15.0196 | NO CODE | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
-| Table 14: S3 (Geo-Long) / Est. Blended LCOE | 68 | 68.61 | 0.61 | NO CODE | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
-| Table 14: S4 (Geo + PPA) / Est. Blended LCOE | 64.5 | 66.9112 | 2.4112 | NO CODE | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
-| Table 14: S5 (Nuclear) / Est. Blended LCOE | 94.2 | 88.0617 | -6.1383 | NO CODE | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
-| Table 14: S6 (Geo + Micro) / Est. Blended LCOE | 77.8 | 73.4906 | -4.3094 | NO CODE | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
-| Table 15: S1: Island (RICE) / ALOLP | 72.5 | 72 | -0.5 | NO CODE | observation only: max BTM output / 250 MW |
-| Table 15: S2: Hybrid PPA / ALOLP | 91.2 | 98 | 6.8 | NO CODE | observation only: max BTM output / 250 MW |
-| Table 15: S3: 100% Geothermal / ALOLP | 99.9 | 100 | 0.1 | NO CODE | observation only: max BTM output / 250 MW |
-| Table 15: S4: Geo + PPA / ALOLP | 58 | 58 | 0 | NO CODE | observation only: max BTM output / 250 MW |
-| Table 15: S5: SMR + PPA / ALOLP | 72 | 72 | 0 | NO CODE | observation only: max BTM output / 250 MW |
-| Table 15: S6: Geo + Microturbines / ALOLP | 84 | 84 | 0 | NO CODE | observation only: max BTM output / 250 MW |
+| Table 14: Baseline / Est. Blended LCOE | 75 | 76.71 | 1.71 | CODE NOT FOUND | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
+| Table 14: S1 (Island) / Est. Blended LCOE | 85.5 | 68.5654 | -16.9346 | CODE NOT FOUND | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
+| Table 14: S2 (Hybrid PPA) / Est. Blended LCOE | 72.4 | 57.3804 | -15.0196 | CODE NOT FOUND | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
+| Table 14: S3 (Geo-Long) / Est. Blended LCOE | 68 | 68.61 | 0.61 | CODE NOT FOUND | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
+| Table 14: S4 (Geo + PPA) / Est. Blended LCOE | 64.5 | 66.9112 | 2.4112 | CODE NOT FOUND | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
+| Table 14: S5 (Nuclear) / Est. Blended LCOE | 94.2 | 88.0617 | -6.1383 | CODE NOT FOUND | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
+| Table 14: S6 (Geo + Micro) / Est. Blended LCOE | 77.8 | 73.4906 | -4.3094 | CODE NOT FOUND | attempt: Table 12 published LCOEs weighted by the one-day dispatch energy |
+| Table 15: S1: Island (RICE) / ALOLP | 72.5 | 72 | -0.5 | CODE NOT FOUND | observation only: max BTM output / 250 MW |
+| Table 15: S2: Hybrid PPA / ALOLP | 91.2 | 98 | 6.8 | CODE NOT FOUND | observation only: max BTM output / 250 MW |
+| Table 15: S3: 100% Geothermal / ALOLP | 99.9 | 100 | 0.1 | CODE NOT FOUND | observation only: max BTM output / 250 MW |
+| Table 15: S4: Geo + PPA / ALOLP | 58 | 58 | 0 | CODE NOT FOUND | observation only: max BTM output / 250 MW |
+| Table 15: S5: SMR + PPA / ALOLP | 72 | 72 | 0 | CODE NOT FOUND | observation only: max BTM output / 250 MW |
+| Table 15: S6: Geo + Microturbines / ALOLP | 84 | 84 | 0 | CODE NOT FOUND | observation only: max BTM output / 250 MW |
 
 ## Table 9: how the published values were rounded
 

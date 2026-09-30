@@ -71,7 +71,7 @@ def test_committed_reproduction_check_matches_the_code(paths, check):
 def test_every_published_claim_has_a_status(check, published):
     claims = published[~published["note"].fillna("").str.contains("operand of")]
     assert len(check) == len(claims) > 100
-    assert set(check["status"]) <= {"REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "NO CODE"}
+    assert set(check["status"]) <= {"REPRODUCED", "MATCHES", "CONSISTENT", "DIFFERS", "CODE NOT FOUND"}
 
 
 def test_inputs_match_the_paper(check):
@@ -89,7 +89,7 @@ def test_what_does_not_reproduce_is_exactly_the_documented_list(check):
         "T12.lcoe.Small Modular Reactor", "T12.lcoe.Microturbines", "T12.lcoe.Hybrid BESS (LCOS)",
     }
     assert set(check.loc[check["status"] == "DIFFERS", "item"]) == expected
-    no_code = set(check.loc[check["status"] == "NO CODE", "item"])
+    no_code = set(check.loc[check["status"] == "CODE NOT FOUND", "item"])
     assert no_code == {f"T14.{k}" for k in ("Baseline", "S1", "S2", "S3", "S4", "S5", "S6")} | {
         f"T15.alolp.S{i}" for i in range(1, 7)}
 

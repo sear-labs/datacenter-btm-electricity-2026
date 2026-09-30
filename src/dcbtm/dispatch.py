@@ -11,7 +11,7 @@ What this stage is, stated plainly because the paper describes more:
   * A fixed merit order per scenario, with the battery charging at a flat rate in a
     fixed window and discharging at a flat rate when a threshold is crossed.
   * No state of charge, round-trip efficiency, ramp limits or 8,760-hour year. The paper's
-    Section 4.4 describes those; no code in the source material implements them.
+    Section 4.4 describes those; the surviving code implements none of them.
 """
 from __future__ import annotations
 

@@ -94,7 +94,7 @@ scale:  # Section 2.2, Eq. for tokens per second, Table 3 -- no notebook; paper 
   tokens_facility_mw: 100
   tokens_facility_zettaflops: 1.1   # the rounded figure the paper's sentence uses
 
-resilience:  # Table 15 -- no code in the source material
+resilience:  # Table 15 -- the code that computed ALOLP has not been found
   critical_load_mw: 250
   # 'Max BTM Output' reproduces as the sum of Table 11's dispatchable on-site assets:
   dispatchable_btm: ["Geothermal", "SMR", "RICE", "Microturbines", "BESS"]

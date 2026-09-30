@@ -52,7 +52,7 @@ def lcoe_table(costs: pd.DataFrame, cfg: dict) -> pd.DataFrame:
 def blended(dispatch_summary: pd.DataFrame, lcoe_by_tech: dict[str, float]) -> pd.DataFrame:
     """Energy-weighted LCOE per scenario, as Section 4.5 describes the Table 14 method.
 
-    NOT a reproduction of Table 14: no code in the source material computes that table,
+    NOT a reproduction of Table 14: the code that produced that table has not been found,
     and the paper's method names an 8,760-hour dispatch that does not exist. This applies
     the stated method to the one day that does, so the gap can be seen rather than assumed.
     BESS charging load is not priced here (its energy is counted when discharged).
