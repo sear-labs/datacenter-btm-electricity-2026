@@ -48,11 +48,12 @@ Recorded here so no session "fixes" the code to match them. The report has the n
 - Table 12's LCOE column is not what `lcoe_calcs.ipynb` computes for Grid, EGS, SMR and BESS.
   Same formula (RICE and microturbines match to $1/kW of CapEx), different inputs for those four;
   672 alternative conventions tried, none fits, and the inputs are not identifiable.
-- Tables 14 (blended LCOE) and 15 (ALOLP): Jones Jr. computed them with code that was later lost.
-  It was searched for on 2026-09-30 (README, "The missing code") and not found. If it turns up,
-  archive it verbatim, run it, and move those items to REPRODUCED or DIFFERS.
-- Table 9 comes from an earlier notebook version (`archive/notebooks/history/data_center_demand_mc_v2.ipynb`,
-  recovered from Colab revision history 2026-10-01); the published values are truncated, not rounded.
+- Tables 14 (blended LCOE) and 15 (ALOLP) were computed with code that was later lost and has not
+  been found; do not search for it again unless asked. If it turns up, archive it verbatim, run it,
+  and move those items to REPRODUCED or DIFFERS. Keep the README's account of it short: no list
+  of where or how it was searched.
+- Table 9 comes from an earlier notebook version (`archive/notebooks/history/data_center_demand_mc_v2.ipynb`);
+  the published values are truncated, not rounded.
 - The paper's methods describe an 8,760-hour dispatch with state of charge, 88 % round-trip
   efficiency and ramp limits. The code is one 24-hour day with none of those.
 - In S6, the published Figure 5 dispatches microturbines to 93.4 MW against 80 MW installed.
