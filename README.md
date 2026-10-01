@@ -82,12 +82,11 @@ change without the test changing too.
    98.0) it does not. That is an observation, not a reconstruction. The authors' correction
    recomputes the table from Equations (11) and (12) (below).
 4. **Section 2.2, tokens per second.** The paper's own equation, 1.1 × 10²¹ FLOP/s ÷ (2 × 30 × 10⁹),
-   gives 18.3 billion tokens/s; the text says 36.6 billion, which is what results without the 2. The
-   figure was carried over from an AI-assisted draft of 2 March 2026.
+   gives 18.3 billion tokens/s; the text says 36.6 billion, which is what results without the 2.
 5. **Table 5, 3-mile total.** The printed rows sum to $11–25 M; the total says $12–27 M.
 
-**How Table 9 was produced.** By an earlier version of the demand notebook, recovered from its Colab
-revision history (`archive/notebooks/history/data_center_demand_mc_v2.ipynb`). It runs the Monte Carlo
+**How Table 9 was produced.** By an earlier version of the demand notebook
+(`archive/notebooks/history/data_center_demand_mc_v2.ipynb`). It runs the Monte Carlo
 in MW from one random stream seeded 42, phases in the outer loop, and returns only the per-step 5th,
 50th and 95th percentiles; the table reads the mean of the median, the maximum of the 95th and the
 minimum of the 5th from them. A test runs that notebook's own code and gets the repository's Table 9

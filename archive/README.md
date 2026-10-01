@@ -30,9 +30,7 @@ cartopy 0.25.0, as recorded by the install cell of `maps_for_dc.ipynb`.
 
 ### notebooks/history/
 
-Earlier versions of two of the notebooks above, downloaded by Jones Jr. from their Colab revision
-history on 2026-10-01, byte for byte. Two further revisions, the empty "Untitled" notebooks each
-started as, are not kept.
+Earlier versions of two of the notebooks above, byte for byte.
 
 | File | Is an earlier version of | Produced |
 |---|---|---|
