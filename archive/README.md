@@ -36,7 +36,7 @@ Earlier versions of two of the notebooks above, byte for byte.
 |---|---|---|
 | `data_center_demand_mc_v2.ipynb` | `data_center_demand_mc.ipynb` | **Table 9.** Runs the Monte Carlo in MW for each phase (25, 100, 250 MW), phases outer, one seed. `tests/test_agreement_with_archive.py` runs its code and gets the repository's Table 9 bit for bit. |
 | `data_center_demand_mc_v3.ipynb` | `data_center_demand_mc.ipynb` | **Figure 4.** Same code as the final notebook; its saved output is the figure, where the final notebook's is a stale LCOE printout. |
-| `scenarios_gen_v2.ipynb` | `scenarios_gen.ipynb` | Nothing published. An earlier dispatch on the "Normal Day" profile that the first submission's text describes, without battery charging. Its saved output is a syntax error from an earlier run. |
+| `scenarios_gen_v2.ipynb` | `scenarios_gen.ipynb` | Nothing published. An earlier dispatch on the "Normal Day" profile, without battery charging. Its saved output is a syntax error from an earlier run. |
 
 ## manuscript-figures/
 

@@ -323,9 +323,9 @@ Recorded so nobody mistakes one for the other.
 - **S6 exceeds its installed microturbines.** In the published Figure 5, microturbines peak at
   93.4 MW against the 80 MW Table 11 installs. `tests/test_invariants.py` pins this as the only
   such case.
-- **Figure 5's demand day changed.** The first submission says the dispatch follows a "Normal Day".
-  An earlier dispatch notebook did (`archive/notebooks/history/scenarios_gen_v2.ipynb`, no battery
-  charging); the published Figure 5 uses the High Usage (Spike) day with charging windows.
+- **Figure 5 uses the spike day.** The published Figure 5 dispatches the High Usage (Spike) day
+  with charging windows. An earlier dispatch notebook used the Normal Day, without battery charging
+  (`archive/notebooks/history/scenarios_gen_v2.ipynb`).
 
 ## Layout
 
