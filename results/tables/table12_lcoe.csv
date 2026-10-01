@@ -1,0 +1,8 @@
+technology,annual_energy_mwh_per_mw,lcoe_usd_per_mwh
+ERCOT Grid (345 kV),8760.0,77.314821
+Utility Solar PPA,2452.8,35.0
+RICE (Natural Gas),7884.0,60.252619
+Enhanced Geothermal,8322.0,61.850931
+Small Modular Reactor,8322.0,98.316541
+Microturbines,7884.0,79.628274
+Hybrid BESS (LCOS),1825.0,85.499688

@@ -1,0 +1,15 @@
+year,scenario,blended_lcoe_usd_per_mwh
+mixed,Baseline,77.314821
+mixed,S1,72.628335
+mixed,S2,54.214343
+mixed,S3,61.850931
+mixed,S4,59.550605
+mixed,S5,97.415166
+mixed,S6,66.281792
+spike,Baseline,77.314821
+spike,S1,69.096811
+spike,S2,57.027645
+spike,S3,61.850931
+spike,S4,62.835941
+spike,S5,92.445191
+spike,S6,69.912652

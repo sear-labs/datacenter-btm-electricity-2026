@@ -1,0 +1,70 @@
+# From sear-labs/code-standard templates/.github/workflows/ci.yml, adjusted.
+# Needs no secrets and no licence: nothing here uses a solver.
+#
+# Installs the LOCKED versions (the ones that produced results/), runs the whole pipeline
+# from a clean checkout, then the tests, then checks that regenerating left every committed
+# TABLE numerically unchanged. Figures are regenerated but not compared: a PNG drawn on this
+# runner is never byte-identical to one drawn on the authors' machine.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"   # what ran: Colab 3.12 for the paper, 3.12.14 for this port
+
+      - name: Install the locked environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-lock.txt
+          pip install -e . --no-deps
+
+      - name: Record what actually ran
+        run: |
+          python --version
+          pip freeze
+
+      # FIRST, against the committed results as a reader receives them: this is the step that
+      # proves the numbers committed from the authors' machine are what a clean runner computes.
+      - name: Tests against the committed results
+        run: pytest -q
+
+      - name: Reproduce everything (one command)
+        run: python scripts/run_all.py
+
+      # Again, now that run_all.py has rewritten results/: its output must satisfy the same tests.
+      - name: Tests against the regenerated results
+        run: pytest -q
+
+      - name: Show what regenerating changed (bytes; the numbers were checked above)
+        run: git status --short results/ && git diff --stat results/tables/
+
+      - name: Lint
+        run: ruff check .
+
+  # The ranges in pyproject.toml, resolved fresh: catches a new major version before a reader does.
+  latest-within-ranges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+          pip freeze
+      - run: pytest -q
+      - run: python scripts/run_all.py --no-maps
+      - run: pytest -q

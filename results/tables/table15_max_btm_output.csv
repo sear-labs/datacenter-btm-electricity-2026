@@ -1,0 +1,7 @@
+scenario,max_btm_output_mw,share_of_critical_load_pct
+S1,180,72.0
+S2,245,98.0
+S3,250,100.0
+S4,145,58.0
+S5,180,72.0
+S6,210,84.0

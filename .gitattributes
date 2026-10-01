@@ -1,0 +1,9 @@
+# Text is stored with LF in the repository on every platform.
+* text=auto eol=lf
+
+# The archive is frozen byte-for-byte and checked against archive/MANIFEST.sha256.
+# Line-ending conversion on checkout would change those bytes on Windows only.
+archive/** -text
+
+*.png binary
+*.pdf binary

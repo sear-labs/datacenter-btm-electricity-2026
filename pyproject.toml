@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dcbtm"
+version = "1.0.0"
+description = "Code behind Jones and Jones (2026), 'Megawatts to Zettaflops', Electricity 7(2), 43: behind-the-meter power for AI data centers"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Erick C. Jones, Jr." },
+    { name = "Erick C. Jones, Sr." },
+]
+# What ran: Python 3.12 (Colab for the published figures; conda-forge 3.12.14 for this port).
+# The resolved versions are in requirements-lock.txt.
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "numpy>=2.0,<3",
+    "pandas>=2.2,<3",
+    "matplotlib>=3.10,<4",
+    "pyyaml>=6,<7",
+    "pillow>=10,<12",
+    "cartopy>=0.25,<0.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<9",
+    "ruff>=0.6,<1",
+]
+
+[project.urls]
+Paper = "https://doi.org/10.3390/electricity7020043"
+Repository = "https://github.com/sear-labs/datacenter-btm-electricity-2026"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# matplotlib 3.10.0 (the version that drew the paper's figures) calls pyparsing APIs that
+# pyparsing 3.3 deprecates. Noise from a pinned dependency, not from this code.
+filterwarnings = [
+    "ignore:.*deprecated - use:DeprecationWarning",
+    # the archived notebooks call plt.show(); under the Agg backend that is a no-op
+    "ignore:FigureCanvasAgg is non-interactive:UserWarning",
+]
+
+[tool.ruff]
+line-length = 120
+# The archive is never corrected, and it holds only notebooks.
+extend-exclude = ["archive"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["dcbtm", "conftest"]

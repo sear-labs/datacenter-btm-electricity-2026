@@ -1,0 +1,4 @@
+facility_mw,racks,compute_exaflops,fabric_petabits_s,egress_terabits_s
+25,200.0,280.0,320.0,200.0
+50,400.0,560.0,640.0,400.0
+100,800.0,1120.0,1280.0,800.0

@@ -1,0 +1,26 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Applies to, in this repository:
+
+  data/                          input tables and the transcribed published values
+  results/                       computed tables, figures and the reproduction report
+  archive/manuscript-figures/    the figures as submitted with the manuscript
+  references.bib                 the bibliography
+  README.md, CLAUDE.md, archive/README.md   prose
+
+Copyright (c) 2026 Erick C. Jones, Jr. and Erick C. Jones, Sr.
+
+You are free to share and adapt this material for any purpose, including commercially,
+provided you give appropriate credit, provide a link to the licence, and indicate if
+changes were made. Credit this material by citing:
+
+  Jones, E. C., Jr.; Jones, E. C., Sr. Megawatts to Zettaflops: A Techno-Economic Framework
+  for Grid-Tied Behind-the-Meter Architectures in AI Data Centers. Electricity 2026, 7(2), 43.
+  https://doi.org/10.3390/electricity7020043
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Third-party material is not relicensed. The market capacities in data/raw/markets_*.csv are
+the authors' reading of the industry reports cited in the paper (CBRE; Cushman & Wakefield);
+the reports themselves are not included. Map base layers are drawn at run time from Natural
+Earth (public domain) and are not stored here.

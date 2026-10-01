@@ -1,0 +1,6 @@
+asset_scenario,nameplate_mw,projected_annual_mwh,total_possible_mwh,capacity_factor_pct,resilience_reserve_pct
+100% Geothermal (S3),300.0,2190000,2628000.0,83.333333,16.666667
+SMR Nuclear (S5),278.0,2190000,2435280.0,89.928058,10.071942
+Microturbines (S6),300.0,1182600,2628000.0,45.0,55.0
+RICE Peaking (S1),300.0,788400,2628000.0,30.0,70.0
+Tiered-Performance BESS,250.0,164250,2190000.0,7.5,92.5
