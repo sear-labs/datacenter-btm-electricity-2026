@@ -10,8 +10,8 @@ Every item gets a KIND, which says what claim is being tested:
     computed     the code computes it; REPRODUCED or DIFFERS
     input        it is an input (data/raw or config.yaml); MATCHES or DIFFERS from the paper
     arithmetic   the paper's own rows should sum to its total; CONSISTENT or DIFFERS
-    code not found   the authors computed it, but the code that did was not found (searched
-                 2026-09-30; see README). CODE NOT FOUND. Where a best attempt or an observation
+    code not found   the authors computed it, but the code that did was lost (README, "The
+                 missing code"). CODE NOT FOUND. Where a best attempt or an observation
                  exists it is shown beside it, and is not a reproduction.
 """
 from __future__ import annotations

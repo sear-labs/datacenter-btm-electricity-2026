@@ -95,16 +95,11 @@ bit for bit. The published values are these **truncated** to one decimal in 26 o
 
 ## The missing code
 
-Tables 12 (the four LCOEs above), 14 and 15 were computed with code that was later lost. On
-2026-09-30 it was searched for by reading the contents of every notebook and script in the authors'
-personal and lab Google Drives, UT Arlington OneDrive, and local disks (about 120,000 code files),
-for the published values and for the paper's vocabulary, with a positive control each time; and the
-authors' Claude chat history was searched from within Claude. On 2026-10-01 the authors recovered the
-Colab revision histories of the demand and dispatch notebooks and the Overleaf projects; those found
-Table 9's code (above) and an earlier dispatch (below), but not these. The earliest draft has four
-scenarios with round LCOEs ($65-$105/MWh) and ALOLP as an outage risk (0.1-2.5 %); the published
-values first appear in the first submission (5 March 2026) and never change after it. If the code
-turns up, it goes into `archive/` verbatim, and these items move to REPRODUCED or DIFFERS.
+Some of the original code was lost: the version that computed Tables 14 and 15 and part of
+Table 12's LCOE column. Those values cannot be reproduced from the paper alone, most likely because
+assumptions in the lost code were not written down. The authors wrote new code from the paper's
+equations, updated the assumptions to be more accurate, and corrected the tables; see
+[Correction to the published article](#correction-to-the-published-article).
 
 ## Correction to the published article
 
