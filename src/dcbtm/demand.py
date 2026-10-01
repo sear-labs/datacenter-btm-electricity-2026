@@ -76,16 +76,18 @@ def figure4_bands(cfg: dict) -> pd.DataFrame:
 
 
 def table9(cfg: dict) -> pd.DataFrame:
-    """Table 9, RECONSTRUCTED: no notebook in the source material computes it.
+    """Table 9, from an earlier version of the demand notebook.
 
-    The published values are reproduced by this procedure, which is the notebook's
-    simulation run in MW rather than per cent:
+    ``archive/notebooks/history/data_center_demand_mc_v2.ipynb`` runs this simulation in MW,
+    one seed, phases in the outer loop and scenarios inside, and returns only P5, P50 and
+    P95. It plots them and prints nothing, so the table's statistics were read from those
+    three arrays:
 
-        one RandomState(seed); for each phase cap (outer), for each scenario (inner):
             Avg Power            = mean over time of the per-step median
             95th Percentile Peak = max over time of the per-step P95
             Min Idle Power       = min over time of the per-step P5
 
+    ``tests/test_agreement_with_archive.py`` runs v2's own code and requires bit-equality.
     The published table TRUNCATES these to one decimal in 26 of 27 cells (the 27th is
     rounded); results/reproduction_report.md lists the cell. Values here are unrounded.
     """

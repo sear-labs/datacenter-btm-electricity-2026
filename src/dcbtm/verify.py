@@ -62,7 +62,8 @@ def computed_values(r: dict, cfg: dict, published: pd.DataFrame) -> dict[str, tu
             shown = "truncated" if abs(_trunc1(x) - pub[f"T9.{name}.{row.phase_mw}.{row.scenario}"]) < 1e-9 else (
                 "rounded" if abs(round(x, 1) - pub[f"T9.{name}.{row.phase_mw}.{row.scenario}"]) < 1e-9 else "neither")
             v[f"T9.{name}.{row.phase_mw}.{row.scenario}"] = (
-                "computed", x, f"reconstructed Monte Carlo (see demand.table9); published value = {shown} to 1 dp")
+                "computed", x,
+                f"data_center_demand_mc_v2.ipynb (archive/notebooks/history); published value = {shown} to 1 dp")
 
     for row in r["table11"].to_dict("records"):
         for k, x in row.items():

@@ -51,7 +51,8 @@ Recorded here so no session "fixes" the code to match them. The report has the n
 - Tables 14 (blended LCOE) and 15 (ALOLP): Jones Jr. computed them with code that was later lost.
   It was searched for on 2026-09-30 (README, "The missing code") and not found. If it turns up,
   archive it verbatim, run it, and move those items to REPRODUCED or DIFFERS.
-- Table 9 is reproduced by a reconstruction; the published values are truncated, not rounded.
+- Table 9 comes from an earlier notebook version (`archive/notebooks/history/data_center_demand_mc_v2.ipynb`,
+  recovered from Colab revision history 2026-10-01); the published values are truncated, not rounded.
 - The paper's methods describe an 8,760-hour dispatch with state of charge, 88 % round-trip
   efficiency and ramp limits. The code is one 24-hour day with none of those.
 - In S6, the published Figure 5 dispatches microturbines to 93.4 MW against 80 MW installed.

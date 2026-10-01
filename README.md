@@ -49,7 +49,7 @@ and checked there value by value.
 | | Items | Result |
 |---|---|---|
 | Table 3, compute scale | 12 | all reproduce |
-| Table 9, Monte Carlo demand | 27 | all reproduce (within 0.1 MW; see below) |
+| Table 9, Monte Carlo demand | 27 | all reproduce, from the original code (within 0.1 MW; see below) |
 | Table 11, installed capacity | 23 | inputs; all match |
 | Table 12, technology costs and LCOE | 42 | 35 inputs match; **6 of 7 LCOEs differ** |
 | Table 13, asset utilisation | 25 | all reproduce |
@@ -77,13 +77,16 @@ change without the test changing too.
    published value equals Max BTM Output ÷ 250 MW exactly; for S1 (72.5 vs 72.0) and S2 (91.2 vs
    98.0) it does not. That is an observation, not a reconstruction.
 4. **Section 2.2, tokens per second.** The paper's own equation, 1.1 × 10²¹ FLOP/s ÷ (2 × 30 × 10⁹),
-   gives 18.3 billion tokens/s; the text says 36.6 billion, which is what results without the 2.
+   gives 18.3 billion tokens/s; the text says 36.6 billion, which is what results without the 2. The
+   figure was carried over from an AI-assisted draft of 2 March 2026.
 5. **Table 5, 3-mile total.** The printed rows sum to $11–25 M; the total says $12–27 M.
 
-**How Table 9 was produced.** No notebook computes it. It reproduces as the notebook's Monte Carlo
-run in MW: one random stream seeded 42, phases in the outer loop, then the mean of the per-step
-median, the maximum of the per-step 95th percentile and the minimum of the per-step 5th. The
-published values are these **truncated** to one decimal in 26 of 27 cells.
+**How Table 9 was produced.** By an earlier version of the demand notebook, recovered from its Colab
+revision history (`archive/notebooks/history/data_center_demand_mc_v2.ipynb`). It runs the Monte Carlo
+in MW from one random stream seeded 42, phases in the outer loop, and returns only the per-step 5th,
+50th and 95th percentiles; the table reads the mean of the median, the maximum of the 95th and the
+minimum of the 5th from them. A test runs that notebook's own code and gets the repository's Table 9
+bit for bit. The published values are these **truncated** to one decimal in 26 of 27 cells.
 
 ## The missing code
 
@@ -91,8 +94,12 @@ Tables 12 (the four LCOEs above), 14 and 15 were computed with code that was lat
 2026-09-30 it was searched for by reading the contents of every notebook and script in the authors'
 personal and lab Google Drives, UT Arlington OneDrive, and local disks (about 120,000 code files),
 for the published values and for the paper's vocabulary, with a positive control each time; and the
-authors' Claude chat history was searched from within Claude. It was not found. If it turns up, it goes into `archive/`
-verbatim, and these items move to REPRODUCED or DIFFERS with the reason known.
+authors' Claude chat history was searched from within Claude. On 2026-10-01 the authors recovered the
+Colab revision histories of the demand and dispatch notebooks and the Overleaf projects; those found
+Table 9's code (above) and an earlier dispatch (below), but not these. The earliest draft has four
+scenarios with round LCOEs ($65-$105/MWh) and ALOLP as an outage risk (0.1-2.5 %); the published
+values first appear in the first submission (5 March 2026) and never change after it. If the code
+turns up, it goes into `archive/` verbatim, and these items move to REPRODUCED or DIFFERS.
 
 ## Where the code and the paper's methods differ
 
@@ -110,6 +117,9 @@ Recorded so nobody mistakes one for the other.
 - **S6 exceeds its installed microturbines.** In the published Figure 5, microturbines peak at
   93.4 MW against the 80 MW Table 11 installs. `tests/test_invariants.py` pins this as the only
   such case.
+- **Figure 5's demand day changed.** The first submission says the dispatch follows a "Normal Day".
+  An earlier dispatch notebook did (`archive/notebooks/history/scenarios_gen_v2.ipynb`, no battery
+  charging); the published Figure 5 uses the High Usage (Spike) day with charging windows.
 
 ## Layout
 

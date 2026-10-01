@@ -73,6 +73,24 @@ def test_demand_bands_match_demand_mc_notebook(tmp_path, stages, cfg):
             assert np.array_equal(ours.to_numpy(), theirs), f"{s} P{q} differs"
 
 
+def test_table9_matches_demand_mc_v2(stages):
+    """Table 9 comes from an EARLIER version of the demand notebook (archive/notebooks/history).
+
+    v2 runs the same Monte Carlo in MW for each phase, phases in the outer loop, from one
+    seed, and returns only P5/P50/P95; the table's three statistics are read from those.
+    Run its own definitions and its own loop order, and require bit-equality.
+    """
+    (code,) = notebook_cells(NB / "history" / "data_center_demand_mc_v2.ipynb")
+    ns: dict = {}
+    exec(compile(code.split("# Plotting Execution")[0], "<archived notebook>", "exec"), ns)  # seeds 42
+    theirs = [(mw, s, *ns["run_monte_carlo"](mw, s)) for mw in ns["PHASES"].values() for s in ns["SCENARIOS"]]
+    ours = stages["table9"]
+    assert len(theirs) == len(ours) == 9
+    for (mw, s, p5, p50, p95), row in zip(theirs, ours.itertuples()):
+        assert (mw, s) == (row.phase_mw, row.scenario)
+        assert p50.mean() == row.avg_power_mw and p95.max() == row.p95_peak_mw and p5.min() == row.min_idle_mw, (mw, s)
+
+
 def test_lcoe_matches_lcoe_notebook(tmp_path, stages):
     (code,) = notebook_cells(NB / "lcoe_calcs.ipynb")
     printed = _run(code, tmp_path, name="__main__")["__stdout__"]
