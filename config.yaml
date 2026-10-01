@@ -98,3 +98,12 @@ resilience:  # Table 15 -- the code that computed ALOLP has not been found
   critical_load_mw: 250
   # 'Max BTM Output' reproduces as the sum of Table 11's dispatchable on-site assets:
   dispatchable_btm: ["Geothermal", "SMR", "RICE", "Microturbines", "BESS"]
+
+correction:  # README "Correction": Tables 12, 14 and 15 recomputed from the paper's equations
+  # Decided by the authors 2026-10-01; see src/dcbtm/correction.py for what each value does.
+  days: 365
+  weekdays_per_week: 5         # days 0-4 of each week are weekdays
+  spike_weekday_share: 0.10    # mixed year: a weekday is High Usage (Spike) with this probability
+  round_trip_efficiency: 0.88  # Table 10; split evenly between charging and discharging
+  bess_usable_hours: 4         # Table 10: a 5-hour system at 80 % depth of discharge
+  firm_btm: ["Geothermal", "SMR", "RICE", "Microturbines"]   # on-site supply that does not depend on the hour

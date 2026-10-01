@@ -3,7 +3,8 @@
     python scripts/run_all.py              # everything (Figures 1-2 need a network once)
     python scripts/run_all.py --no-maps    # offline: skips Figures 1-2 and says so
 
-Writes results/tables/*.csv, results/figures/*.png and results/reproduction_report.md.
+Writes results/tables/*.csv, results/figures/*.png and results/reproduction_report.md,
+including the authors' correction to Tables 12, 14 and 15 (src/dcbtm/correction.py).
 Takes about a minute; the Monte Carlo (12 x 1,000 draws) is most of it.
 """
 from __future__ import annotations
@@ -15,7 +16,7 @@ import time
 import numpy as np
 import pandas as pd
 
-from dcbtm import demand, dispatch, figures, lcoe, resilience, scale, utilization, verify
+from dcbtm import correction, demand, dispatch, figures, lcoe, resilience, scale, utilization, verify
 from dcbtm.config import load_config, load_table
 from dcbtm.paths import Paths
 
@@ -43,13 +44,13 @@ def main(argv=None) -> int:
     cfg = load_config(P)
     print(f"root: {P.root}")
 
-    print("[1/6] demand Monte Carlo (Figure 4, Table 9)")
+    print("[1/7] demand Monte Carlo (Figure 4, Table 9)")
     bands = demand.figure4_bands(cfg)
     t9 = demand.table9(cfg)
     write(bands, P.tables / "fig4_demand_bands.csv")
     write(t9, P.tables / "table09_demand_monte_carlo.csv")
 
-    print("[2/6] dispatch (Figure 5, Table 11)")
+    print("[2/7] dispatch (Figure 5, Table 11)")
     disp = dispatch.run(cfg)
     summ = dispatch.summary(disp, cfg)
     t11 = dispatch.installed_table(cfg)
@@ -57,7 +58,7 @@ def main(argv=None) -> int:
     write(summ, P.tables / "dispatch_summary.csv")
     write(t11, P.tables / "table11_installed_capacity.csv")
 
-    print("[3/6] LCOE (Table 12) and the Table 14 blend")
+    print("[3/7] LCOE (Table 12) and the Table 14 blend")
     costs = load_table("technology_costs", P)
     t12 = lcoe.lcoe_table(costs, cfg)
     write(t12, P.tables / "table12_lcoe.csv")
@@ -67,7 +68,7 @@ def main(argv=None) -> int:
     blend = lcoe.blended(summ, pub_lcoe)
     write(blend, P.tables / "table14_blended_lcoe_attempt.csv")
 
-    print("[4/6] utilisation (Table 13), scale (Table 3), resilience (Table 15)")
+    print("[4/7] utilisation (Table 13), scale (Table 3), resilience (Table 15)")
     t13 = utilization.table13(load_table("asset_utilization", P), cfg)
     t3 = scale.table3(cfg)
     btm = resilience.max_btm_output(cfg)
@@ -75,7 +76,7 @@ def main(argv=None) -> int:
     write(t3, P.tables / "table03_compute_scale.csv")
     write(btm, P.tables / "table15_max_btm_output.csv")
 
-    print("[5/6] figures")
+    print("[5/7] figures")
     figs = [
         {"figure": "Figure 1", "source": "maps_for_dc.ipynb (executed cell)", "file": None, "ms": None,
          "note": MAP_NOTE.format(pdf="us_texas_datacenters.pdf", result=(
@@ -106,13 +107,19 @@ def main(argv=None) -> int:
                 f["comparison"] = verify.compare_images(made[f["figure"]], P.archive / "manuscript-figures" / f["ms"])
             print(f"  wrote {f['file']}")
 
-    print("[6/6] compare with the published paper")
+    print("[6/7] the authors' correction: Tables 14 and 15 over an 8,760-hour year (README, \"Correction\")")
+    corr = correction.run(cfg, t12)
+    write(corr["table14"], P.tables / "correction_table14_blended_lcoe.csv")
+    write(corr["table15"], P.tables / "correction_table15_alolp.csv")
+    write(corr["energy"], P.tables / "correction_annual_energy.csv")
+
+    print("[7/7] compare with the published paper")
     r = {"table3": t3, "tokens_per_second": scale.tokens_per_second(cfg["scale"]["tokens_facility_zettaflops"], cfg),
          "table9": t9, "table11": t11, "costs": costs, "lcoe": t12, "table13": t13, "blended": blend, "max_btm": btm}
     chk = verify.check(r, cfg, published)
     write(chk, P.tables / "reproduction_check.csv")
     extras = invariants(disp, cfg)
-    verify.report(chk, figs, extras, P.results / "reproduction_report.md")
+    verify.report(chk, figs, extras, P.results / "reproduction_report.md", corr)
     print("  wrote results/reproduction_report.md")
     print("\n" + chk["status"].value_counts().to_string())
     print(f"\ndone in {time.time() - t0:.0f} s")

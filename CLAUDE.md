@@ -56,3 +56,8 @@ Recorded here so no session "fixes" the code to match them. The report has the n
 - The paper's methods describe an 8,760-hour dispatch with state of charge, 88 % round-trip
   efficiency and ramp limits. The code is one 24-hour day with none of those.
 - In S6, the published Figure 5 dispatches microturbines to 93.4 MW against 80 MW installed.
+- **The authors' correction** (README, "Correction to the published article", decided by Jones Jr.
+  2026-10-01) recomputes Tables 12, 14 and 15 from the paper's equations in `src/dcbtm/correction.py`:
+  a mixed 8,760-hour year, energy-weighted blend, reserve capacity not charged, Eq. 12 as a relative
+  reduction. `tests/test_correction.py` ties every number in that README section to the run. It is
+  a correction, not a reproduction: the published values keep their DIFFERS / CODE NOT FOUND status.

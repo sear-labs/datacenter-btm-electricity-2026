@@ -80,3 +80,26 @@ for a reader and not a test; CI checks only that each figure was regenerated.
 - smallest value of any source in any scenario (MW): 0.000000
 - dispatch above installed capacity (Table 11): S6: Geothermal + Grid + Microturbines + Hybrid BESS: Microturbines peaks at 93.42 MW > installed 80 MW
 - energy balance, supply = demand + charging, every step: holds in every scenario
+
+## The authors' correction (not a reproduction)
+
+Tables 14 and 15 recomputed from the paper's equations over an 8,760-hour year
+(`src/dcbtm/correction.py`; the README's "Correction" section is the authors' statement).
+The mixed year gives the corrected values; the spike year is a sensitivity. Table 12's
+corrected LCOE is `results/tables/table12_lcoe.csv` as computed above.
+
+| Scenario | Blended LCOE, mixed ($/MWh) | Blended LCOE, spike ($/MWh) | ALOLP, mixed (%) | ALOLP, spike (%) |
+|---|---|---|---|---|
+| Baseline | 77.31 | 77.31 | - | - |
+| S1 | 72.63 | 69.10 | 88.49 | 34.75 |
+| S2 | 54.21 | 57.03 | 99.98 | 99.43 |
+| S3 | 61.85 | 61.85 | 100.00 | 100.00 |
+| S4 | 59.55 | 62.84 | 86.61 | 3.69 |
+| S5 | 97.42 | 92.45 | 96.53 | 45.41 |
+| S6 | 66.28 | 69.91 | 97.09 | 58.42 |
+
+Unserved energy, where installed capacity cannot meet the load:
+
+- mixed year, S6: 1,072.1 MWh of 1,126,337 MWh (0.095 %)
+- spike year, S2: 2.8 MWh of 1,712,051 MWh (under 0.001 %)
+- spike year, S6: 16,945.6 MWh of 1,712,051 MWh (0.990 %)

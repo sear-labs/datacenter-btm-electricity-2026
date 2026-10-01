@@ -49,6 +49,9 @@ FRESH = {
     "table13_asset_utilization.csv": lambda s: s["table13"],
     "table03_compute_scale.csv": lambda s: s["table3"],
     "table15_max_btm_output.csv": lambda s: s["max_btm"],
+    "correction_table14_blended_lcoe.csv": lambda s: s["correction"]["table14"],
+    "correction_table15_alolp.csv": lambda s: s["correction"]["table15"],
+    "correction_annual_energy.csv": lambda s: s["correction"]["energy"],
 }
 
 

@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from dcbtm import demand, dispatch, lcoe, resilience, scale, utilization
+from dcbtm import correction, demand, dispatch, lcoe, resilience, scale, utilization
 from dcbtm.config import load_config, load_table
 from dcbtm.paths import Paths
 
@@ -50,6 +50,7 @@ def stages(cfg, paths, published) -> dict:
         "table3": scale.table3(cfg),
         "tokens_per_second": scale.tokens_per_second(cfg["scale"]["tokens_facility_zettaflops"], cfg),
         "max_btm": resilience.max_btm_output(cfg),
+        "correction": correction.run(cfg, t12),
     }
 
 
