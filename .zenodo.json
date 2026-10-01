@@ -1,0 +1,16 @@
+{
+  "title": "datacenter-btm-electricity-2026: code behind 'Megawatts to Zettaflops' (Electricity, 2026)",
+  "upload_type": "software",
+  "description": "Code and data that regenerate every computed table and figure in Jones Jr. and Jones Sr. (2026), 'Megawatts to Zettaflops: A Techno-Economic Framework for Grid-Tied Behind-the-Meter Architectures in AI Data Centers', Electricity 7(2), 43, compare each number with the published article, and carry the authors' correction to Tables 12, 14 and 15. Code MIT; data, results and prose CC BY 4.0 (see LICENSE-DATA and the README).",
+  "creators": [
+    {"name": "Jones, Jr., Erick C.", "affiliation": "University of Texas at Arlington", "orcid": "0000-0003-0559-4699"},
+    {"name": "Jones, Sr., Erick C.", "affiliation": "Prairie View A&M University"}
+  ],
+  "license": "mit-license",
+  "access_right": "open",
+  "keywords": ["data centers", "behind-the-meter generation", "techno-economic analysis", "levelized cost of energy",
+               "Monte Carlo", "ERCOT", "enhanced geothermal", "battery energy storage"],
+  "related_identifiers": [
+    {"identifier": "10.3390/electricity7020043", "relation": "isSupplementTo", "scheme": "doi", "resource_type": "publication-article"}
+  ]
+}
