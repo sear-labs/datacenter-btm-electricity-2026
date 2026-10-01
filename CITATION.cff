@@ -1,9 +1,10 @@
-# No `doi:` for the software yet: the Zenodo concept DOI is added once, after the first
-# release, and never changed (code standard Part 5). The PAPER's DOI is below.
+# `doi:` is the Zenodo CONCEPT DOI: it resolves to the latest release and never changes
+# (code standard Part 5). The PAPER's DOI is under preferred-citation.
 cff-version: 1.2.0
 message: "If you use this code, please cite the paper below."
 title: "datacenter-btm-electricity-2026: code behind 'Megawatts to Zettaflops' (Electricity, 2026)"
 type: software
+doi: "10.5281/zenodo.23088644"
 authors:
   - family-names: Jones
     given-names: Erick C.
