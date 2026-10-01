@@ -15,6 +15,10 @@ conclusions are unaffected; some specific findings change. See
 
 Cite the paper. GitHub's "Cite this repository" button reads `CITATION.cff`.
 
+The code is archived on Zenodo: [doi:10.5281/zenodo.23088644](https://doi.org/10.5281/zenodo.23088644)
+always resolves to the latest release; v1.0.0 is
+[doi:10.5281/zenodo.23088645](https://doi.org/10.5281/zenodo.23088645).
+
 ```bibtex
 @article{jones2026megawatts,
   author  = {Jones, Jr., Erick C. and Jones, Sr., Erick C.},
